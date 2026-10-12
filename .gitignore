@@ -9,3 +9,6 @@
 
 # Réglages Claude personnels
 .claude/settings.local.json
+
+# Archive locale des critiques de design (plugin Impeccable)
+.impeccable/

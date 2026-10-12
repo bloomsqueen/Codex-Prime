@@ -12,9 +12,9 @@ Les personnes qui suivent les cours adultes de Paris. Aucune connaissance en pro
 
 | Page | Contenu |
 |---|---|
-| `index.html` | Accueil : présentation, public visé, conseils pour démarrer |
+| `index.html` | Accueil : accroche, deux grandes cartes vers les pages, trois conseils pour démarrer |
 | `connaissances.html` | Glossaire du vocabulaire de base (prompt, agent, MCP, hallucination…) et trois réflexes à garder |
-| `outils.html` | Comparaison de deux sources de ressources : un post sur X et le dépôt GitHub [awesome-vibecoding](https://github.com/Scap-Mehdi/awesome-vibecoding) |
+| `outils.html` | Comparatif de 15 outils d'IA (9 du dépôt [awesome-vibecoding](https://github.com/Scap-Mehdi/awesome-vibecoding), 6 ressources d'un post sur X), avec un avertissement sur les sources et leur fiabilité |
 
 C'est un site statique, sans framework ni dépendance : du HTML et du CSS.
 
@@ -23,7 +23,7 @@ C'est un site statique, sans framework ni dépendance : du HTML et du CSS.
 ```
 index.html            accueil
 connaissances.html    glossaire
-outils.html           comparaison de deux sources
+outils.html           comparatif d'outils d'IA
 css/style.css         style commun à toutes les pages
 CLAUDE.md             consignes pour travailler sur le dépôt avec Claude
 ```
@@ -47,7 +47,7 @@ Puis ouvrir http://127.0.0.1:8000/ dans le navigateur. (Sous Windows, essayer `p
 
 ## Accessibilité
 
-Le site vise une lecture confortable pour toutes et tous : contrastes d'au moins 7:1, texte redimensionnable, navigation au clavier avec lien d'évitement, focus visible, pas de défilement horizontal à 320 px, prise en charge du mode sombre, du contraste renforcé et du mouvement réduit. Toute nouvelle page doit respecter ces règles.
+Le design utilise trois couleurs seulement (papier, encre, accent). Le site vise une lecture confortable pour toutes et tous : contrastes d'au moins 7:1, texte redimensionnable, navigation au clavier avec lien d'évitement, focus visible, pas de défilement horizontal à 320 px, prise en charge du mode sombre, du contraste renforcé et du mouvement réduit. Toute nouvelle page doit respecter ces règles.
 
 ## Contribuer
 
