@@ -1,33 +1,34 @@
-/* Couleurs : tous les textes ont un contraste d'au moins 7:1 (niveau AAA). */
+/*
+  Trois couleurs seulement : papier, encre, accent.
+  Les gris sont des mélanges de papier et d'encre.
+  Tous les textes ont un contraste d'au moins 7:1 (niveau AAA).
+*/
 :root {
-  --bg: #ffffff;
-  --surface: #f4f4f1;
-  --text: #16161a;
-  --muted: #44444c;
-  --border: #6b6b72;
-  --accent-a: #8a3b00;
-  --accent-b: #0b5a47;
-  --link: #0a4fa3;
-  --focus: #0a4fa3;
+  --paper: #f6f5f0;
+  --ink: #12122b;
+  --accent: #3321c4;
+
+  --surface: #e9e8e5;
+  --muted: #45455e;
+  --line: #6b6b80;
+  --focus: var(--accent);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #121214;
-    --surface: #1c1c20;
-    --text: #f3f3f5;
-    --muted: #c9c9d0;
-    --border: #8d8d96;
-    --accent-a: #ffb98a;
-    --accent-b: #72e3c4;
-    --link: #8ec1ff;
-    --focus: #8ec1ff;
+    --paper: #0f0f1e;
+    --ink: #f2f1ec;
+    --accent: #b4aeff;
+
+    --surface: #1c1c2a;
+    --muted: #c6c5d4;
+    --line: #8f8fa6;
   }
 }
 
 @media (prefers-contrast: more) {
   :root {
-    --border: currentColor;
+    --line: var(--ink);
   }
 }
 
@@ -36,62 +37,66 @@
 }
 
 html {
-  /* Respecte la taille de texte choisie dans le navigateur */
-  font-size: 100%;
-  scroll-behavior: auto;
+  font-size: 100%; /* respecte la taille de texte choisie dans le navigateur */
 }
 
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
+  background: var(--paper);
+  color: var(--ink);
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
   font-size: 1.125rem;
-  line-height: 1.65;
+  line-height: 1.6;
 }
 
 main {
-  max-width: 60rem;
+  max-width: 68rem;
   margin: 0 auto;
-  padding: 2rem 1rem 4rem;
+  padding: 1.5rem 1rem 4rem;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
 h1 {
-  font-size: 2rem;
-  line-height: 1.25;
-  margin: 0 0 0.5rem;
+  font-size: clamp(2.25rem, 8vw, 4.25rem);
+  font-weight: 800;
+  margin: 0 0 1rem;
 }
 
 h2 {
-  font-size: 1.5rem;
-  line-height: 1.3;
-  margin: 2.75rem 0 1rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 750;
+  margin: 3.5rem 0 1.25rem;
 }
 
 h3 {
-  font-size: 1.2rem;
-  line-height: 1.35;
+  font-size: 1.25rem;
   margin: 0 0 0.5rem;
 }
 
 p,
 li {
-  max-width: 70ch;
+  max-width: 68ch;
 }
 
 /* Les liens sont toujours soulignés : la couleur seule ne suffit pas */
 a {
-  color: var(--link);
+  color: var(--accent);
   text-decoration: underline;
   text-decoration-thickness: 0.1em;
   text-underline-offset: 0.2em;
 }
 
 a:hover {
-  text-decoration-thickness: 0.2em;
+  text-decoration-thickness: 0.22em;
 }
 
-/* Focus clavier bien visible */
 :focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 3px;
@@ -100,7 +105,7 @@ a:hover {
 
 code {
   font-family: ui-monospace, Menlo, Consolas, monospace;
-  font-size: 0.95em;
+  font-size: 0.92em;
   background: var(--surface);
   padding: 0.05em 0.3em;
   border-radius: 0.25rem;
@@ -111,16 +116,34 @@ code {
   margin: 0;
 }
 
-/* Lien d'évitement : visible seulement quand on arrive dessus au clavier */
+.lead {
+  font-size: clamp(1.15rem, 3vw, 1.4rem);
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Petit libellé au-dessus d'un titre */
+.eyebrow {
+  display: inline-block;
+  margin: 0 0 1rem;
+  padding: 0.15rem 0.75rem;
+  border: 2px solid var(--accent);
+  border-radius: 99px;
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+/* ---------- Accessibilité ---------- */
 .skip-link {
   position: absolute;
   left: 0.5rem;
   top: -4rem;
   z-index: 10;
   padding: 0.6rem 1rem;
-  background: var(--bg);
-  color: var(--text);
-  border: 2px solid var(--text);
+  background: var(--paper);
+  color: var(--ink);
+  border: 2px solid var(--ink);
   border-radius: 0.25rem;
 }
 
@@ -140,76 +163,237 @@ code {
   border: 0;
 }
 
-/* Cartes des deux sources */
+/* ---------- Navigation ---------- */
+.site-header {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 1rem 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+}
+
+.site-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav li {
+  max-width: none;
+}
+
+.site-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem; /* zone cliquable confortable */
+  padding: 0 1rem;
+  border-radius: 99px;
+  color: var(--ink);
+}
+
+/* Page courante : fond plein, gras ET souligné (pas seulement la couleur) */
+.site-nav a[aria-current="page"] {
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 700;
+  text-decoration-thickness: 0.15em;
+}
+
+/* ---------- Accueil ---------- */
+.hero {
+  padding: 2.5rem 0 1rem;
+}
+
+.hero .lead {
+  max-width: 34ch;
+}
+
+.pitch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: baseline;
+  margin: 2rem 0 0;
+  padding: 1rem 1.25rem;
+  background: var(--accent);
+  color: var(--paper);
+  border-radius: 1rem;
+  max-width: none;
+}
+
+.pitch strong {
+  font-size: 1.25rem;
+}
+
+/* Grandes cartes vers les sous-pages */
+.tiles {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 15rem;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 2px solid var(--ink);
+  border-radius: 1.25rem;
+  max-width: none;
+}
+
+.tile:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.tile-num {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.tile:hover .tile-num,
+.tile:hover a {
+  color: var(--paper);
+}
+
+.tile h2,
+.tile h3 {
+  margin: 0;
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
+}
+
+/* Le lien couvre toute la carte : on clique n'importe où */
+.tile a {
+  color: var(--ink);
+}
+
+.tile a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.tile a:focus-visible {
+  outline: none;
+}
+
+.tile:has(a:focus-visible) {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+}
+
+.tile p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.tile:hover p {
+  color: var(--paper);
+}
+
+.tile-go {
+  margin-top: auto;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Trois réflexes : une ligne chacun */
+.steps {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.steps li {
+  counter-increment: step;
+  padding-top: 1rem;
+  border-top: 4px solid var(--accent);
+  font-weight: 650;
+  max-width: none;
+}
+
+.steps li::before {
+  content: "0" counter(step);
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+/* ---------- Cartes ---------- */
 .cards {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
 }
 
 .card {
   background: var(--surface);
-  border: 2px solid var(--border);
-  border-top-width: 6px;
-  border-radius: 0.5rem;
-  padding: 1rem 1.25rem;
+  border: 2px solid var(--line);
+  border-radius: 1rem;
+  padding: 1.25rem;
+}
+
+.card h3 {
+  margin-bottom: 0.25rem;
 }
 
 .card p {
-  margin: 0 0 0.75rem;
+  margin: 0;
 }
 
-.card ul {
-  margin: 0;
+.card .meta {
+  margin-top: 0.25rem;
+}
+
+/* ---------- Choisir selon son besoin ---------- */
+.need {
+  border-top: 6px solid var(--accent);
+}
+
+.need ul {
+  margin: 0.75rem 0 0;
   padding-left: 1.25rem;
 }
 
-.card-a {
-  border-top-color: var(--accent-a);
-}
-
-.card-b {
-  border-top-color: var(--accent-b);
-}
-
-/* Le texte « Source A / B » porte l'information, pas la couleur */
-.tag {
-  display: inline-block;
-  font-size: 0.9rem;
-  font-weight: 700;
-  padding: 0.05rem 0.6rem;
-  margin-right: 0.35rem;
-  border: 2px solid currentColor;
-  border-radius: 99px;
-  white-space: nowrap;
-}
-
-.card-a .tag {
-  color: var(--accent-a);
-}
-
-.card-b .tag {
-  color: var(--accent-b);
-}
-
-.takeaways {
-  margin: 0;
-  padding-left: 1.25rem;
-}
-
-.takeaways li {
-  margin-bottom: 0.5rem;
-}
-
-/* Tableau */
+/* ---------- Tableaux ---------- */
 .table-wrap {
   overflow-x: auto;
-  border: 2px solid var(--border);
-  border-radius: 0.5rem;
+  border: 2px solid var(--ink);
+  border-radius: 1rem;
 }
 
 table {
   width: 100%;
+  min-width: 40rem;
   border-collapse: collapse;
   font-size: 1rem;
 }
@@ -219,7 +403,7 @@ td {
   text-align: left;
   vertical-align: top;
   padding: 0.75rem 1rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--line);
 }
 
 tbody tr:last-child th,
@@ -228,21 +412,101 @@ tbody tr:last-child td {
 }
 
 thead th {
-  background: var(--surface);
-  border-bottom: 4px solid var(--border);
-}
-
-thead th.col-a {
-  border-bottom-color: var(--accent-a);
-}
-
-thead th.col-b {
-  border-bottom-color: var(--accent-b);
+  background: var(--ink);
+  color: var(--paper);
+  border-bottom: 0;
 }
 
 tbody th {
-  width: 9rem;
   font-weight: 700;
+  white-space: nowrap;
+}
+
+tbody tr:nth-child(even) {
+  background: var(--surface);
+}
+
+/* Le texte « Source A / B » porte l'information, pas la couleur */
+.tag {
+  display: inline-block;
+  padding: 0 0.55rem;
+  border: 2px solid currentColor;
+  border-radius: 99px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.tag-b {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+.group-note {
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+
+/* ---------- Avertissement ---------- */
+.disclaimer {
+  margin-top: 3.5rem;
+  padding: 1.5rem;
+  border: 2px solid var(--ink);
+  border-left-width: 10px;
+  border-radius: 1rem;
+  background: var(--surface);
+}
+
+.disclaimer h2 {
+  margin-top: 0;
+}
+
+.disclaimer h3 {
+  margin-top: 1.25rem;
+}
+
+.disclaimer ul {
+  padding-left: 1.25rem;
+}
+
+/* ---------- Glossaire ---------- */
+dl.glossary {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+  margin: 0;
+}
+
+dl.glossary div {
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 1rem;
+}
+
+dl.glossary dt {
+  font-weight: 750;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+dl.glossary dd {
+  margin: 0.25rem 0 0;
+}
+
+/* ---------- Encadré ---------- */
+.callout {
+  border: 2px solid var(--ink);
+  border-left-width: 10px;
+  border-radius: 1rem;
+  background: var(--surface);
+  padding: 0.75rem 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.callout p {
+  margin: 0;
 }
 
 ul.plain {
@@ -250,15 +514,11 @@ ul.plain {
 }
 
 footer {
-  margin-top: 3rem;
+  margin-top: 3.5rem;
   padding-top: 1rem;
-  border-top: 2px solid var(--border);
+  border-top: 2px solid var(--line);
   color: var(--muted);
   font-size: 1rem;
-}
-
-footer a {
-  color: var(--link);
 }
 
 @media (max-width: 40rem) {
@@ -266,34 +526,29 @@ footer a {
     font-size: 1.0625rem;
   }
 
-  h1 {
-    font-size: 1.65rem;
-  }
-
-  tbody th {
-    width: auto;
+  .tile {
+    min-height: 11rem;
   }
 
   th,
   td {
-    padding: 0.6rem 0.5rem;
-    overflow-wrap: anywhere;
+    padding: 0.6rem 0.75rem;
   }
 }
 
-/* Aucune animation dans cette page ; on le garantit pour les futurs ajouts */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
     transition: none !important;
-    scroll-behavior: auto !important;
   }
 }
 
 /* Mode contraste forcé de Windows */
 @media (forced-colors: active) {
+  .tile,
   .card,
-  .table-wrap {
+  .table-wrap,
+  .disclaimer {
     border-color: CanvasText;
   }
 
@@ -310,99 +565,4 @@ footer a {
   .skip-link {
     display: none;
   }
-}
-
-/* ---------- Navigation du site ---------- */
-.site-header {
-  max-width: 60rem;
-  margin: 0 auto;
-  padding: 1rem 1rem 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem 1.5rem;
-}
-
-.site-name {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--text);
-  text-decoration: none;
-}
-
-.site-name:hover {
-  text-decoration: underline;
-}
-
-.site-nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem 1.25rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.site-nav li {
-  max-width: none;
-}
-
-.site-nav a {
-  display: inline-block;
-  padding: 0.35rem 0;
-  min-height: 2.75rem; /* zone cliquable confortable */
-  line-height: 2.05;
-}
-
-/* La page courante est soulignée et en gras, pas seulement colorée */
-.site-nav a[aria-current="page"] {
-  color: var(--text);
-  font-weight: 700;
-  text-decoration-thickness: 0.2em;
-}
-
-/* ---------- Texte d'introduction ---------- */
-.lead {
-  font-size: 1.25rem;
-  color: var(--muted);
-}
-
-/* ---------- Cartes de liens (accueil) ---------- */
-.card h3 a {
-  color: var(--text);
-}
-
-.card-link {
-  border-top-color: var(--accent-b);
-}
-
-/* ---------- Glossaire ---------- */
-dl.glossary {
-  margin: 0;
-}
-
-dl.glossary dt {
-  font-weight: 700;
-  font-size: 1.15rem;
-  margin-top: 1.5rem;
-}
-
-dl.glossary dd {
-  margin: 0.25rem 0 0;
-  max-width: 70ch;
-}
-
-/* ---------- Encadré d'attention ---------- */
-.callout {
-  border: 2px solid var(--border);
-  border-left-width: 8px;
-  border-radius: 0.5rem;
-  background: var(--surface);
-  padding: 0.75rem 1.25rem;
-  margin: 1.5rem 0;
-}
-
-.callout p {
-  margin: 0;
 }

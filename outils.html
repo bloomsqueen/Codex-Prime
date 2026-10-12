@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <meta name="description" content="Comparaison de deux sources de ressources pour le vibe coding : un post sur X et le dépôt GitHub awesome-vibecoding.">
-  <title>Outils : comparer deux sources · Codex Prime</title>
+  <meta name="description" content="Comparatif de 15 outils d'IA pour créer un site ou une application, tirés du dépôt awesome-vibecoding et d'un post sur X.">
+  <title>Outils : comparatif de 15 outils d'IA · Codex Prime</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -24,105 +24,208 @@
 
   <main id="contenu">
     <header>
-      <h1>Deux sources d'outils de vibe coding, comparées</h1>
-      <p class="meta">Analyse du 12 octobre 2026.</p>
+      <p class="eyebrow">Outils</p>
+      <h1>15 outils d'IA, comparés</h1>
+      <p class="lead">Pour créer un site ou une application sans écrire le code soi-même.</p>
+      <p class="meta">Analyse du 12 octobre 2026. Je n'ai testé aucun de ces outils.</p>
     </header>
 
-    <section aria-labelledby="sources">
-      <h2 id="sources">Les deux sources</h2>
+    <section aria-labelledby="choisir">
+      <h2 id="choisir">Que voulez-vous faire ?</h2>
       <div class="cards">
-        <article class="card card-a">
-          <h3><span class="tag">Source A</span> Un post sur X</h3>
-          <p>Compte à badge bleu au prénom Himanshu (nom de famille et identifiant illisibles sur la capture). D'après son profil, il est fondateur de Scrollslide.</p>
-          <ul>
-            <li>Une liste de 25 ressources de design et d'interface, sans date par entrée ni preuve.</li>
-            <li>L'entrée n° 1, Scrollslide, semble être le produit de l'auteur.</li>
-          </ul>
+        <article class="card need">
+          <h3>Créer une application vite</h3>
+          <p>Vous décrivez, l'outil construit.</p>
+          <ul><li>Lovable</li><li>Bolt.new</li><li>Replit</li><li>v0</li></ul>
         </article>
-
-        <article class="card card-b">
-          <h3><span class="tag">Source B</span> Un dépôt GitHub</h3>
-          <p><a href="https://github.com/Scap-Mehdi/awesome-vibecoding">Scap-Mehdi/awesome-vibecoding</a>, lu au commit <code>697b573</code> du 9 octobre 2026 (fichier <code>README.fr.md</code>).</p>
-          <ul>
-            <li>54 outils de développement assisté par IA, chacun daté, avec son accès et sa licence.</li>
-            <li>Mis à jour par un agent automatique. 50 entrées sur 54 renvoient à une fiche de preuves.</li>
-          </ul>
+        <article class="card need">
+          <h3>Être aidé pour écrire du code</h3>
+          <p>L'IA travaille dans vos fichiers.</p>
+          <ul><li>Claude Code</li><li>Cursor</li><li>GitHub Copilot</li><li>Gemini CLI</li><li>OpenAI Codex CLI</li></ul>
+        </article>
+        <article class="card need">
+          <h3>Soigner l'apparence</h3>
+          <p>Prompts, composants et styles à donner à l'IA.</p>
+          <ul><li>Scrollslide</li><li>21st.dev</li><li>shadcn/ui</li><li>DESIGN.md</li><li>Refero Styles</li><li>Component Gallery</li></ul>
         </article>
       </div>
     </section>
 
-    <section aria-labelledby="retenir">
-      <h2 id="retenir">À retenir</h2>
-      <ul class="takeaways">
-        <li><strong>Pas de recoupement :</strong> aucune des 25 ressources de A n'est dans B.</li>
-        <li><strong>B se contrôle, A non :</strong> dates et preuves d'un côté, avis d'un auteur de l'autre.</li>
-        <li><strong>« Vérifié » reste partiel :</strong> revue du 18 septembre, en partie automatisée, prix souvent non examinés.</li>
-      </ul>
-    </section>
-
-    <section aria-labelledby="comparaison">
-      <h2 id="comparaison">Comparaison</h2>
-      <div class="table-wrap">
-        <table class="compare">
-          <caption class="visually-hidden">Comparaison de la source A (post sur X) et de la source B (dépôt GitHub), critère par critère.</caption>
+    <section aria-labelledby="creer">
+      <h2 id="creer">Créer une application vite</h2>
+      <p class="group-note">Ces outils fonctionnent à partir d'une description écrite.</p>
+      <div class="table-wrap" role="region" aria-label="Outils pour créer une application à partir d'une description" tabindex="0">
+        <table>
+          <caption class="visually-hidden">Outils pour créer une application à partir d'une description</caption>
           <thead>
             <tr>
-              <th scope="col">Critère</th>
-              <th scope="col" class="col-a">Source A · post sur X</th>
-              <th scope="col" class="col-b">Source B · dépôt GitHub</th>
+              <th scope="col">Outil</th>
+              <th scope="col">À quoi il sert</th>
+              <th scope="col">Accès et prix</th>
+              <th scope="col">Source et date</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th scope="row">Format</th>
-              <td>Capture d'écran</td>
-              <td>Texte Markdown, licence CC0</td>
+              <th scope="row"><a href="https://lovable.dev/">Lovable</a></th>
+              <td>Crée une application complète à partir d'une description, avec une base de données (Supabase).</td>
+              <td>Prix à vérifier sur le site</td>
+              <td><span class="tag tag-b">B</span> 18 sept. 2026</td>
             </tr>
             <tr>
-              <th scope="row">Sujet</th>
-              <td>Design et interface</td>
-              <td>Outils de développement par IA</td>
+              <th scope="row"><a href="https://bolt.new/">Bolt.new</a></th>
+              <td>Crée une application à partir d'une description en langage naturel. Édité par StackBlitz.</td>
+              <td>Prix à vérifier sur le site</td>
+              <td><span class="tag tag-b">B</span> 18 sept. 2026</td>
             </tr>
             <tr>
-              <th scope="row">Taille</th>
-              <td>25 entrées</td>
-              <td>54 entrées</td>
+              <th scope="row"><a href="https://replit.com/">Replit</a></th>
+              <td>Construit et améliore une application avec son assistant, Replit Agent.</td>
+              <td>Prix à vérifier sur le site</td>
+              <td><span class="tag tag-b">B</span> 18 sept. 2026</td>
             </tr>
             <tr>
-              <th scope="row">Dates</th>
-              <td>Celle du post seulement</td>
-              <td>Une par entrée (18 sept. au 4 oct.)</td>
-            </tr>
-            <tr>
-              <th scope="row">Preuves</th>
-              <td>Aucune</td>
-              <td>50 entrées sur 54</td>
-            </tr>
-            <tr>
-              <th scope="row">Accès et prix</th>
-              <td>Non indiqués</td>
-              <td>Indiqués, souvent « Vérifier le prix » (28 sur 54)</td>
-            </tr>
-            <tr>
-              <th scope="row">Langues</th>
-              <td>Anglais</td>
-              <td>Anglais, français, coréen, japonais</td>
+              <th scope="row"><a href="https://v0.app/">v0</a></th>
+              <td>Génère des écrans et des composants d'interface. Édité par Vercel.</td>
+              <td>Prix à vérifier sur le site</td>
+              <td><span class="tag tag-b">B</span> 18 sept. 2026</td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <section aria-labelledby="limites">
-      <h2 id="limites">Limites de cette comparaison</h2>
-      <ul class="plain">
-        <li>Source A : la capture est en basse résolution. Les compteurs (vues, likes), l'année et l'heure du post sont illisibles et ne sont pas repris.</li>
-        <li>Source B : j'ai lu le dépôt tel qu'il est (README, catalogue, registre JSON, politique de curation) et calculé les chiffres à partir du <code>README.fr.md</code>. Je n'ai ouvert ni les fiches de preuves ni les sites des outils. Je rapporte donc ce que le dépôt affirme, sans l'avoir revérifié.</li>
+    <section aria-labelledby="assistants">
+      <h2 id="assistants">Être aidé pour écrire du code</h2>
+      <p class="group-note">Un <strong>terminal</strong> est une fenêtre où l'on tape des commandes. Un <strong>éditeur</strong> est un programme pour écrire du code. Les outils ci-dessous demandent plus de pratique.</p>
+      <div class="table-wrap" role="region" aria-label="Assistants d'aide à l'écriture de code" tabindex="0">
+        <table>
+          <caption class="visually-hidden">Assistants d'aide à l'écriture de code</caption>
+          <thead>
+            <tr>
+              <th scope="col">Outil</th>
+              <th scope="col">À quoi il sert</th>
+              <th scope="col">Accès et prix</th>
+              <th scope="col">Source et date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><a href="https://code.claude.com/docs/en/overview">Claude Code</a></th>
+              <td>Assistant qui travaille dans un terminal (fenêtre de commandes) et sur un projet entier.</td>
+              <td>Prix à vérifier sur le site</td>
+              <td><span class="tag tag-b">B</span> 18 sept. 2026</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://www.cursor.com/">Cursor</a></th>
+              <td>Éditeur de code avec un assistant pour écrire, corriger et relire.</td>
+              <td>Prix à vérifier sur le site</td>
+              <td><span class="tag tag-b">B</span> 18 sept. 2026</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://github.com/features/copilot">GitHub Copilot</a></th>
+              <td>Aide à écrire du code dans GitHub et dans les éditeurs.</td>
+              <td>Prix à vérifier sur le site</td>
+              <td><span class="tag tag-b">B</span> 18 sept. 2026</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://github.com/google-gemini/gemini-cli">Gemini CLI</a></th>
+              <td>Assistant en terminal, ouvert (code public). Pas d'abonnement grand public d'après le dépôt.</td>
+              <td>Gratuit à installer. Accès par clé d'API ou offre entreprise.</td>
+              <td><span class="tag tag-b">B</span> 18 sept. 2026</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://openai.com/codex/">OpenAI Codex CLI</a></th>
+              <td>Assistant d'OpenAI qui s'exécute dans le terminal de l'ordinateur.</td>
+              <td>Prix à vérifier sur le site</td>
+              <td><span class="tag tag-b">B</span> 18 sept. 2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="apparence">
+      <h2 id="apparence">Soigner l'apparence</h2>
+      <p class="group-note">Ce sont des ressources à donner à l'IA, pas des IA. Descriptions reprises du post sur X, sans avoir ouvert les sites. Les chiffres sont ceux annoncés par l'auteur.</p>
+      <div class="table-wrap" role="region" aria-label="Ressources de design à fournir à l'IA" tabindex="0">
+        <table>
+          <caption class="visually-hidden">Ressources de design à fournir à l'IA</caption>
+          <thead>
+            <tr>
+              <th scope="col">Outil</th>
+              <th scope="col">À quoi il sert</th>
+              <th scope="col">Accès et prix</th>
+              <th scope="col">Source et date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><a href="https://scrollslide.co">Scrollslide</a></th>
+              <td>Prompts et code prêts à copier dans Claude, Cursor ou Lovable, pour des sites animés. Annonce : « 600+ prompts ». C'est le site de l'auteur du post.</td>
+              <td>Non indiqués</td>
+              <td><span class="tag">A</span> date du post illisible</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://21st.dev">21st.dev</a></th>
+              <td>Catalogue de composants (boutons, formulaires…) que l'IA peut utiliser via MCP.</td>
+              <td>Non indiqués</td>
+              <td><span class="tag">A</span> date du post illisible</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://ui.shadcn.com">shadcn/ui</a></th>
+              <td>Composants d'interface réutilisables. Décrit comme la référence pour une interface propre.</td>
+              <td>Non indiqués</td>
+              <td><span class="tag">A</span> date du post illisible</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://designmd.ai">DESIGN.md</a></th>
+              <td>Styles visuels écrits en texte, que l'IA peut lire pour respecter une charte.</td>
+              <td>Non indiqués</td>
+              <td><span class="tag">A</span> date du post illisible</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://styles.refero.design">Refero Styles</a></th>
+              <td>Annonce : « 2 000+ » styles de vrais produits, avec leurs polices.</td>
+              <td>Non indiqués</td>
+              <td><span class="tag">A</span> date du post illisible</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://component.gallery">Component Gallery</a></th>
+              <td>Annonce : « 2 600+ » exemples d'un même élément d'interface dans de grands systèmes de design.</td>
+              <td>Non indiqués</td>
+              <td><span class="tag">A</span> date du post illisible</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="disclaimer" aria-labelledby="sources">
+      <h2 id="sources">Sources et fiabilité</h2>
+      <p>Les deux sources n'ont pas le même niveau de preuve. Lisez le tableau avec cela en tête.</p>
+
+      <h3><span class="tag tag-b">B</span> Dépôt GitHub awesome-vibecoding : fiabilité moyenne à bonne</h3>
+      <p><a href="https://github.com/Scap-Mehdi/awesome-vibecoding/blob/main/README.fr.md">Scap-Mehdi/awesome-vibecoding</a>, fichier <code>README.fr.md</code>, relu le 12 octobre 2026. Les 9 outils retenus ont tous la date de vérification du 18 septembre 2026.</p>
+      <ul>
+        <li><strong>Pour :</strong> une date par entrée, un accès et une licence indiqués, des fiches de preuves pour la plupart des entrées.</li>
+        <li><strong>Contre :</strong> le dépôt est mis à jour par un agent automatique. La mention « vérifié » est en partie automatisée. Les prix sont souvent non examinés (« à vérifier »).</li>
+        <li><strong>Non vérifié par moi :</strong> je n'ai ouvert ni les fiches de preuves ni les sites des outils.</li>
       </ul>
+
+      <h3><span class="tag">A</span> Post sur X : fiabilité faible</h3>
+      <p>Capture d'écran d'un post d'un compte au prénom Himanshu, qui se présente comme fondateur de Scrollslide.</p>
+      <ul>
+        <li><strong>Contre :</strong> la première ressource de la liste est le produit de l'auteur. Aucune date, aucun prix, aucune preuve par entrée. Les chiffres (« 600+ », « 2 000+ ») sont des annonces.</li>
+        <li><strong>Non vérifié :</strong> la capture est en basse résolution. Le nom de famille, l'identifiant, l'année et les compteurs sont illisibles. Je n'ai pas ouvert les sites cités : les descriptions viennent uniquement du post.</li>
+      </ul>
+
+      <h3>Ce que cette page ne dit pas</h3>
+      <p>Aucun classement : je n'ai pas comparé la qualité des résultats. Les prix changent souvent : vérifiez-les sur le site de chaque outil avant de vous inscrire. Les catégories sont les miennes, pour faciliter la lecture.</p>
     </section>
 
     <footer>
-      Sources : capture d'un post sur X ; <a href="https://github.com/Scap-Mehdi/awesome-vibecoding/blob/main/README.fr.md">README.fr.md</a> et <a href="https://github.com/Scap-Mehdi/awesome-vibecoding/blob/main/docs/curation-policy.md">politique de curation</a> du dépôt awesome-vibecoding.
+      Sources : capture d'un post sur X ; <a href="https://github.com/Scap-Mehdi/awesome-vibecoding/blob/main/README.fr.md">README.fr.md</a> du dépôt awesome-vibecoding. Dernière mise à jour : 12 octobre 2026.
     </footer>
   </main>
 </body>
