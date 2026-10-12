@@ -120,18 +120,7 @@ code {
   font-size: clamp(1.15rem, 3vw, 1.4rem);
   color: var(--muted);
   margin: 0;
-}
-
-/* Petit libellé au-dessus d'un titre */
-.eyebrow {
-  display: inline-block;
-  margin: 0 0 1rem;
-  padding: 0.15rem 0.75rem;
-  border: 2px solid var(--accent);
-  border-radius: 99px;
-  color: var(--accent);
-  font-size: 0.95rem;
-  font-weight: 700;
+  text-wrap: pretty;
 }
 
 /* ---------- Accessibilité ---------- */
@@ -176,6 +165,9 @@ code {
 }
 
 .site-name {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
   font-size: 1.25rem;
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -218,32 +210,26 @@ code {
 }
 
 .hero .lead {
-  max-width: 34ch;
+  max-width: 40ch;
 }
 
+/* Définition : calme, en simple texte. L'accent souligne le terme défini. */
 .pitch {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1rem;
-  align-items: baseline;
-  margin: 2rem 0 0;
-  padding: 1rem 1.25rem;
-  background: var(--accent);
-  color: var(--paper);
-  border-radius: 1rem;
-  max-width: none;
+  margin: 1.5rem 0 0;
+  font-size: 1.15rem;
+  max-width: 44ch;
 }
 
 .pitch strong {
-  font-size: 1.25rem;
+  border-bottom: 4px solid var(--accent);
 }
 
-/* Grandes cartes vers les sous-pages */
+/* Grandes cartes vers les sous-pages : le plus fort contraste de la page */
 .tiles {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
-  margin: 2rem 0 0;
+  margin: 2.5rem 0 0;
   padding: 0;
   list-style: none;
 }
@@ -253,41 +239,30 @@ code {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  min-height: 15rem;
+  min-height: 11rem;
   padding: 1.5rem;
-  background: var(--surface);
-  border: 2px solid var(--ink);
+  background: var(--accent);
+  color: var(--paper);
+  border: 2px solid var(--accent);
   border-radius: 1.25rem;
   max-width: none;
 }
 
 .tile:hover {
   background: var(--ink);
-  color: var(--paper);
+  border-color: var(--ink);
 }
 
-.tile-num {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--accent);
-}
-
-.tile:hover .tile-num,
-.tile:hover a {
-  color: var(--paper);
-}
-
-.tile h2,
-.tile h3 {
+.tile h2 {
   margin: 0;
   font-size: clamp(1.75rem, 5vw, 2.25rem);
 }
 
-/* Le lien couvre toute la carte : on clique n'importe où */
 .tile a {
-  color: var(--ink);
+  color: var(--paper);
 }
 
+/* Le lien couvre toute la carte : on clique n'importe où */
 .tile a::after {
   content: "";
   position: absolute;
@@ -306,21 +281,15 @@ code {
 
 .tile p {
   margin: 0;
-  color: var(--muted);
-}
-
-.tile:hover p {
-  color: var(--paper);
 }
 
 .tile-go {
   margin-top: auto;
-  font-size: 1.75rem;
-  font-weight: 700;
-  line-height: 1;
+  width: 2rem;
+  height: 2rem;
 }
 
-/* Trois réflexes : une ligne chacun */
+/* Trois conseils : une ligne chacun */
 .steps {
   display: grid;
   gap: 1rem;
@@ -339,8 +308,9 @@ code {
   max-width: none;
 }
 
-.steps li::before {
-  content: "0" counter(step);
+/* Numéros : seulement quand l'ordre compte (étapes) */
+ol.steps li::before {
+  content: counter(step);
   display: block;
   margin-bottom: 0.25rem;
   color: var(--accent);
@@ -374,17 +344,46 @@ code {
   margin-top: 0.25rem;
 }
 
-/* ---------- Choisir selon son besoin ---------- */
-.need {
-  border-top: 6px solid var(--accent);
+/* ---------- Aller à un groupe d'outils ---------- */
+.jump {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.need ul {
-  margin: 0.75rem 0 0;
-  padding-left: 1.25rem;
+.jump li {
+  max-width: none;
+}
+
+.jump a {
+  display: block;
+  min-height: 2.75rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 1rem;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.jump a:hover {
+  border-color: var(--ink);
+}
+
+.jump span {
+  display: block;
+  color: var(--muted);
+  font-weight: 400;
 }
 
 /* ---------- Tableaux ---------- */
+h2[id] {
+  scroll-margin-top: 1rem;
+}
+
 .table-wrap {
   overflow-x: auto;
   border: 2px solid var(--ink);
@@ -393,7 +392,6 @@ code {
 
 table {
   width: 100%;
-  min-width: 40rem;
   border-collapse: collapse;
   font-size: 1rem;
 }
@@ -412,24 +410,30 @@ tbody tr:last-child td {
 }
 
 thead th {
-  background: var(--ink);
-  color: var(--paper);
-  border-bottom: 0;
+  background: var(--surface);
+  border-bottom: 3px solid var(--ink);
 }
 
 tbody th {
   font-weight: 700;
   white-space: nowrap;
+  width: 11rem;
 }
 
 tbody tr:nth-child(even) {
   background: var(--surface);
+  background: color-mix(in srgb, var(--ink) 4%, var(--paper));
+}
+
+/* Source et date : la date reste sur une ligne */
+td.src {
+  white-space: nowrap;
 }
 
 /* Le texte « Source A / B » porte l'information, pas la couleur */
 .tag {
   display: inline-block;
-  padding: 0 0.55rem;
+  padding: 0.1rem 0.6rem;
   border: 2px solid currentColor;
   border-radius: 99px;
   font-size: 0.85rem;
@@ -448,12 +452,24 @@ tbody tr:nth-child(even) {
   margin: 0 0 1rem;
 }
 
+/* Légende des sources, juste sous le titre */
+.legend {
+  margin: 1.25rem 0 0;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--line);
+  border-radius: 1rem;
+  max-width: none;
+}
+
+.legend p {
+  margin: 0.25rem 0;
+}
+
 /* ---------- Avertissement ---------- */
 .disclaimer {
   margin-top: 3.5rem;
   padding: 1.5rem;
   border: 2px solid var(--ink);
-  border-left-width: 10px;
   border-radius: 1rem;
   background: var(--surface);
 }
@@ -474,7 +490,7 @@ tbody tr:nth-child(even) {
 dl.glossary {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
   margin: 0;
 }
 
@@ -488,7 +504,6 @@ dl.glossary div {
 dl.glossary dt {
   font-weight: 750;
   font-size: 1.2rem;
-  color: var(--accent);
 }
 
 dl.glossary dd {
@@ -498,7 +513,6 @@ dl.glossary dd {
 /* ---------- Encadré ---------- */
 .callout {
   border: 2px solid var(--ink);
-  border-left-width: 10px;
   border-radius: 1rem;
   background: var(--surface);
   padding: 0.75rem 1.25rem;
@@ -526,13 +540,57 @@ footer {
     font-size: 1.0625rem;
   }
 
-  .tile {
-    min-height: 11rem;
+  .site-nav a {
+    padding: 0 0.65rem;
+    font-size: 0.95rem;
   }
 
-  th,
+  /* Tableaux : une fiche par outil, sans défilement sur le côté */
+  .table-wrap {
+    border: 0;
+    border-radius: 0;
+  }
+
+  thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  tbody tr {
+    display: block;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem 0;
+    background: var(--surface);
+    border: 2px solid var(--line);
+    border-radius: 1rem;
+  }
+
+  tbody tr:nth-child(even) {
+    background: var(--surface);
+  }
+
+  tbody th,
   td {
-    padding: 0.6rem 0.75rem;
+    display: block;
+    width: auto;
+    padding: 0.2rem 1rem;
+    border: 0;
+    white-space: normal;
+  }
+
+  tbody th {
+    font-size: 1.15rem;
+  }
+
+  td::before {
+    content: attr(data-label);
+    display: block;
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 700;
   }
 }
 
