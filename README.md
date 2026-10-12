@@ -47,7 +47,7 @@ Puis ouvrir http://127.0.0.1:8000/ dans le navigateur. (Sous Windows, essayer `p
 
 ## Accessibilité
 
-Le design utilise trois couleurs seulement (papier, encre, accent). Le site vise une lecture confortable pour toutes et tous : contrastes d'au moins 7:1, texte redimensionnable, navigation au clavier avec lien d'évitement, focus visible, pas de défilement horizontal à 320 px, prise en charge du mode sombre, du contraste renforcé et du mouvement réduit. Toute nouvelle page doit respecter ces règles.
+Le design utilise trois couleurs seulement (papier rose pâle ou violet nuit, encre violette, rose vif). Le site vise une lecture confortable pour toutes et tous : contrastes d'au moins 7:1, texte redimensionnable, navigation au clavier avec lien d'évitement, focus visible, pas de défilement horizontal à 320 px, prise en charge du mode sombre, du contraste renforcé et du mouvement réduit. Toute nouvelle page doit respecter ces règles.
 
 ## Contribuer
 
