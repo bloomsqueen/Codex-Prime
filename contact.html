@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Page de contact de Codex Prime : formulaire d'exemple, pas encore actif.">
+  <title>Contact · Codex Prime</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <a class="site-name" href="index.html">Codex Prime</a>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="connaissances.html">Connaissances</a></li>
+        <li><a href="outils.html">Outils</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenu">
+    <header>
+      <h1>Contact</h1>
+      <p class="lead">Écrivez-nous. Le formulaire n'est pas encore actif.</p>
+    </header>
+
+    <div class="callout">
+      <p><strong>Maquette :</strong> ce formulaire n'envoie rien pour l'instant. Votre message ne sera pas transmis. Il sera activé quand un service d'envoi et de stockage sera en place.</p>
+    </div>
+
+    <section aria-labelledby="formulaire">
+      <h2 id="formulaire">Formulaire</h2>
+      <p>Les champs marqués « obligatoire » doivent être remplis.</p>
+      <form class="form" aria-labelledby="formulaire">
+        <div class="field">
+          <label for="email">Votre adresse électronique <span class="req">(obligatoire)</span></label>
+          <p class="hint" id="email-aide">Exemple : prenom.nom@exemple.fr. Elle sert à vous répondre.</p>
+          <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-aide">
+        </div>
+
+        <div class="field">
+          <label for="sujet">Sujet <span class="req">(obligatoire)</span></label>
+          <input type="text" id="sujet" name="sujet" autocomplete="off" required>
+        </div>
+
+        <div class="field">
+          <label for="message">Message <span class="req">(obligatoire)</span></label>
+          <textarea id="message" name="message" rows="7" required></textarea>
+        </div>
+
+        <button class="button" type="button" aria-disabled="true" aria-describedby="envoi-etat">Envoyer</button>
+        <p class="hint" id="envoi-etat">Le bouton ne fait rien pour l'instant : l'envoi n'est pas encore disponible.</p>
+
+        <p class="info">Les informations saisies seraient conservées 1 an. Pour savoir comment elles sont utilisées, lisez la page <a href="donnees-personnelles.html">Cookies et données personnelles</a>.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-name">Codex Prime</p>
+      <nav aria-label="Pied de page">
+        <ul>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+          <li><a href="aide.html">Aide</a></li>
+          <li><a href="info-site.html">Info site</a></li>
+          <li><a href="accessibilite.html">Accessibilité : non conforme</a></li>
+          <li><a href="https://codexsociety.com">Site de Codex Prime Society</a></li>
+          <li><a href="donnees-personnelles.html">Cookies / Données personnelles</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="footer-note">Site en construction. Dernière mise à jour : 9 novembre 2026.</p>
+  </footer>
+</body>
+</html>

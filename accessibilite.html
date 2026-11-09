@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Accessibilité du site Codex Prime : le site n'est pas conforme. Comment signaler un problème.">
+  <title>Accessibilité : non conforme · Codex Prime</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <a class="site-name" href="index.html">Codex Prime</a>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="connaissances.html">Connaissances</a></li>
+        <li><a href="outils.html">Outils</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenu">
+    <header>
+      <h1>Accessibilité : non conforme</h1>
+      <p class="lead">Ce site n'est pas conforme aux règles d'accessibilité.</p>
+    </header>
+
+    <section aria-labelledby="etat">
+      <h2 id="etat">État</h2>
+      <p>Le site Codex Prime est un site test. Il est <strong>non conforme</strong> aux règles d'accessibilité : aucun audit n'a été réalisé et il n'est pas prévu d'en faire.</p>
+    </section>
+
+    <section aria-labelledby="objectifs">
+      <h2 id="objectifs">Ce que le site cherche à respecter</h2>
+      <p>Ce sont des objectifs de conception, pas une garantie.</p>
+      <ul>
+        <li>Texte bien contrasté, en clair et en sombre.</li>
+        <li>Navigation au clavier et lien « Aller au contenu ».</li>
+        <li>Texte agrandissable, sans perte de contenu sur un écran étroit.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="signaler">
+      <h2 id="signaler">Signaler un problème</h2>
+      <p>Une difficulté pour lire une page ? Écrivez-nous via la page <a href="contact.html">Contact</a>, en indiquant la page concernée.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-name">Codex Prime</p>
+      <nav aria-label="Pied de page">
+        <ul>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="aide.html">Aide</a></li>
+          <li><a href="info-site.html">Info site</a></li>
+          <li><a href="accessibilite.html" aria-current="page">Accessibilité : non conforme</a></li>
+          <li><a href="https://codexsociety.com">Site de Codex Prime Society</a></li>
+          <li><a href="donnees-personnelles.html">Cookies / Données personnelles</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="footer-note">Site en construction. Dernière mise à jour : 9 novembre 2026.</p>
+  </footer>
+</body>
+</html>
