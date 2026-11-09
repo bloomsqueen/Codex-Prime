@@ -14,7 +14,15 @@ Les personnes qui suivent les cours adultes de Paris. Aucune connaissance en pro
 |---|---|
 | `index.html` | Accueil : accroche, deux grandes cartes vers les pages, trois conseils pour démarrer |
 | `connaissances.html` | Glossaire du vocabulaire de base (prompt, agent, MCP, hallucination…) et trois réflexes à garder |
+| `contact.html` | Formulaire de contact (maquette, pas encore actif) |
+| `aide.html` | Aide pour lire et utiliser le site |
+| `info-site.html` | Objet du site, technique, plan du site |
+| `accessibilite.html` | Déclaration d'accessibilité (état « non conforme ») |
+| `donnees-personnelles.html` | Cookies, traceurs et données personnelles |
+| `mentions-legales.html` | Mentions légales |
 | `outils.html` | Comparatif de 15 outils d'IA (9 du dépôt [awesome-vibecoding](https://github.com/Scap-Mehdi/awesome-vibecoding), 6 ressources d'un post sur X), avec un avertissement sur les sources et leur fiabilité |
+
+Chaque page a le même pied de page, avec les liens vers Contact, Aide, Info site, Accessibilité, Cookies et données personnelles, et Mentions légales. Les informations légales que le propriétaire n'a pas fournies sont marquées `[À COMPLÉTER]` : à remplacer avant toute mise en ligne publique.
 
 C'est un site statique, sans framework ni dépendance : du HTML et du CSS.
 
@@ -24,6 +32,12 @@ C'est un site statique, sans framework ni dépendance : du HTML et du CSS.
 index.html            accueil
 connaissances.html    glossaire
 outils.html           comparatif d'outils d'IA
+contact.html          formulaire de contact (maquette)
+aide.html             aide
+info-site.html        informations sur le site
+accessibilite.html    déclaration d'accessibilité
+donnees-personnelles.html   cookies et données personnelles
+mentions-legales.html mentions légales
 css/style.css         style commun à toutes les pages
 CLAUDE.md             consignes pour travailler sur le dépôt avec Claude
 ```

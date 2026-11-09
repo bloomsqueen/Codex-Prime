@@ -541,12 +541,180 @@ ul.plain {
   padding-left: 1.25rem;
 }
 
-footer {
-  margin-top: 3.5rem;
-  padding-top: 1rem;
-  border-top: 2px solid var(--line);
+/* Texte à fournir par le propriétaire : visible, jamais seulement coloré */
+.todo {
+  padding: 0.05em 0.4em;
+  background: var(--accent);
+  color: var(--on-accent);
+  border-radius: 0.3em;
+  font-weight: 700;
+}
+
+.site-footer .todo {
+  border: 2px solid var(--paper);
+}
+
+kbd {
+  padding: 0.05em 0.4em;
+  background: var(--surface);
+  border: 2px solid var(--ink);
+  border-radius: 0.3em;
+  font-family: inherit;
+  font-size: 0.9em;
+  font-weight: 700;
+}
+
+/* ---------- Formulaire ---------- */
+.form {
+  max-width: 40rem;
+}
+
+.field {
+  margin: 0 0 1.5rem;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+}
+
+.req {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.hint {
+  margin: 0 0 0.5rem;
   color: var(--muted);
   font-size: 1rem;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.6rem 0.75rem;
+  background: var(--paper);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  border-radius: 0.75rem;
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+  box-shadow: 4px 4px 0 var(--accent);
+}
+
+.button {
+  min-height: 2.75rem;
+  padding: 0.6rem 1.5rem;
+  background: var(--accent);
+  color: var(--on-accent);
+  border: 3px solid var(--ink);
+  border-radius: 99px;
+  box-shadow: 4px 4px 0 var(--ink);
+  font: inherit;
+  font-weight: 800;
+  cursor: not-allowed;
+}
+
+.button[aria-disabled="true"] {
+  opacity: 1;
+}
+
+.info {
+  margin: 1.5rem 0 0;
+}
+
+/* ---------- Pied de page (commun à toutes les pages) ---------- */
+.site-footer {
+  margin-top: 2rem;
+  padding: 2rem 0 1.5rem;
+  background: var(--ink);
+  color: var(--paper);
+  border-top: 6px solid var(--accent);
+  font-size: 1rem;
+}
+
+.site-footer a {
+  color: var(--paper);
+}
+
+.site-footer a:hover {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.site-footer :focus-visible {
+  outline-color: var(--paper);
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 68rem;
+  margin: 0 auto;
+  padding-inline: 1rem;
+}
+
+.footer-inner p {
+  max-width: 42ch;
+}
+
+.footer-name {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.site-footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer li {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  max-width: none;
+}
+
+.site-footer li a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem; /* zone cliquable confortable */
+}
+
+.site-footer a[aria-current="page"] {
+  font-weight: 700;
+  text-decoration-thickness: 0.2em;
+}
+
+.footer-note {
+  max-width: 68rem;
+  margin: 1.5rem auto 0;
+  padding: 1rem 1rem 0;
+}
+
+.footer-note::before {
+  content: "";
+  display: block;
+  margin-bottom: 1rem;
+  border-top: 1px solid var(--paper);
 }
 
 @media (max-width: 40rem) {
