@@ -22,7 +22,7 @@ Les personnes qui suivent les cours adultes de Paris. Aucune connaissance en pro
 | `mentions-legales.html` | Mentions légales |
 | `outils.html` | Comparatif de 15 outils d'IA (9 du dépôt [awesome-vibecoding](https://github.com/Scap-Mehdi/awesome-vibecoding), 6 ressources d'un post sur X), avec un avertissement sur les sources et leur fiabilité |
 
-Chaque page a le même pied de page, avec les liens vers Contact, Aide, Info site, Accessibilité, Cookies et données personnelles, et Mentions légales. Les informations légales que le propriétaire n'a pas fournies sont marquées `[À COMPLÉTER]` : à remplacer avant toute mise en ligne publique.
+Chaque page a le même pied de page, avec les liens vers Contact, Aide, Info site, Accessibilité, Cookies et données personnelles, et Mentions légales. La page « Cookies et données personnelles » est marquée « en construction » : les informations sur le traitement des données (responsable, finalité, droits) sont à ajouter avant d'activer le formulaire de contact.
 
 C'est un site statique, sans framework ni dépendance : du HTML et du CSS.
 
