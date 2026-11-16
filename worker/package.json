@@ -1,0 +1,16 @@
+{
+  "name": "codex-prime-worker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Script du Worker « codex-prime » (fiches et commentaires dans R2). Déployé par la configuration wrangler.jsonc de la racine.",
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "essai-local": "node test/serveur-local.mjs",
+    "dev": "wrangler dev --config ../wrangler.jsonc",
+    "verifier": "wrangler deploy --dry-run --config ../wrangler.jsonc --outdir ../.wrangler-sortie"
+  },
+  "devDependencies": {
+    "wrangler": "^4.163.0"
+  }
+}

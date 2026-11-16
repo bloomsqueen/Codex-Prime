@@ -1,0 +1,45 @@
+{
+  // Un seul Worker « codex-prime » : il sert les pages du site ET répond sur /api/*.
+  // Le nom doit rester celui du Worker dans Cloudflare (déploiement automatique depuis main).
+  // Aucun secret dans ce fichier.
+  "name": "codex-prime",
+  "main": "worker/index.js",
+  "compatibility_date": "2025-09-01",
+
+  "assets": {
+    // Les pages du site sont à la racine du dépôt. Les fichiers qui ne doivent pas être
+    // publiés (worker/, README…) sont listés dans le fichier .assetsignore.
+    "directory": "./",
+    // Seules les adresses /api/* passent par le script du Worker ; tout le reste reste servi comme avant.
+    "run_worker_first": ["/api/*"]
+  },
+
+  // Bucket R2 déjà créé dans Cloudflare : le nom doit être identique.
+  "r2_buckets": [
+    { "binding": "DATA", "bucket_name": "codex-prime-data" }
+  ],
+
+  // Identifiants publics de Cloudflare Access (pas des secrets).
+  // Tant qu'ils sont vides, TOUTE modification est refusée par le Worker.
+  //   ACCESS_TEAM_DOMAIN : ex. "monequipe.cloudflareaccess.com"
+  //   ACCESS_AUD         : l'« Application Audience (AUD) Tag » de l'application Access
+  "vars": {
+    "ACCESS_TEAM_DOMAIN": "",
+    "ACCESS_AUD": ""
+  },
+
+  // Prévisualisations (builds des branches, commande « wrangler preview ») : Cloudflare exige ce bloc
+  // pour ne pas brancher une prévisualisation sur la production par mégarde.
+  // Ici : les deux variables Access sont VIDES, donc une prévisualisation ne peut JAMAIS modifier
+  // les données (écriture refusée). Elle peut seulement LIRE le bucket de production, qui est public
+  // en lecture de toute façon. Pour un bucket de test séparé, créez-le et changez bucket_name.
+  "previews": {
+    "vars": {
+      "ACCESS_TEAM_DOMAIN": "",
+      "ACCESS_AUD": ""
+    },
+    "r2_buckets": [
+      { "binding": "DATA", "bucket_name": "codex-prime-data" }
+    ]
+  }
+}

@@ -12,3 +12,9 @@
 
 # Archive locale des critiques de design (plugin Impeccable)
 .impeccable/
+
+# Worker : dépendances et sorties locales
+worker/node_modules/
+worker/.wrangler/
+.wrangler-sortie/
+.wrangler/
