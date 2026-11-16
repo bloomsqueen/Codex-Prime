@@ -1,4 +1,4 @@
-// Worker « codex-prime-api » : fiches d'outils et commentaires, stockés dans R2.
+// Script du Worker « codex-prime » (il sert aussi le site, voir ../wrangler.jsonc) : fiches d'outils et commentaires dans R2.
 //
 // Lecture : publique.  Écriture : réservée aux personnes connectées par Cloudflare Access.
 // Aucun secret dans ce fichier. Le Worker vérifie lui-même le jeton signé par Access
@@ -449,6 +449,14 @@ export default {
     const url = new URL(request.url);
     const chemin = url.pathname.replace(/\/+$/, '');
     const methode = request.method;
+
+    // Les pages du site sont servies sans passer ici. Une adresse inconnue hors /api arrive jusqu'ici.
+    if (chemin !== '/api' && !chemin.startsWith('/api/')) {
+      return new Response('Page introuvable.\n', {
+        status: 404,
+        headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' },
+      });
+    }
 
     try {
       // ---- lecture publique

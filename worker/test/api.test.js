@@ -321,6 +321,9 @@ describe('lecture publique', () => {
   test('routes inconnues, méthodes non prévues', async () => {
     const env = creerEnv();
     assert.equal((await appeler(env, 'GET', '/api/nimporte')).statut, 404);
+    const hors = await appeler(env, 'GET', '/pas-une-page.html');
+    assert.equal(hors.statut, 404);
+    assert.match(hors.entetes.get('Content-Type'), /text\/plain/);
     assert.equal((await appeler(env, 'DELETE', '/api/ecriture/outils/outil-001', { auth: true })).statut, 405);
     assert.equal((await appeler(env, 'POST', '/api/outils', { corps: {} })).statut, 404);
   });

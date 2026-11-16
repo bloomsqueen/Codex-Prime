@@ -1,0 +1,13 @@
+# Fichiers du dépôt qui ne doivent PAS être publiés comme pages du site (syntaxe du .gitignore).
+.assetsignore
+wrangler.jsonc
+.gitignore
+CLAUDE.md
+README.md
+worker/
+node_modules/
+.git/
+.github/
+.wrangler/
+.wrangler-sortie/
+.impeccable/

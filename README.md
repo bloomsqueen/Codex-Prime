@@ -40,7 +40,9 @@ donnees-personnelles.html   cookies et données personnelles
 mentions-legales.html mentions légales
 css/style.css         style commun à toutes les pages
 js/outils.js          fiches et commentaires de la page Outils (sans framework)
-worker/               Worker Cloudflare « codex-prime-api » : index.js, wrangler.jsonc, package.json, tests
+wrangler.jsonc        configuration du Worker « codex-prime » (site + API, bucket R2, Access)
+.assetsignore         fichiers non publiés comme pages du site
+worker/               script de l'API (index.js), package.json, tests
 CLAUDE.md             consignes pour travailler sur le dépôt avec Claude
 ```
 
@@ -54,12 +56,13 @@ python3 -m http.server 8000 --bind 127.0.0.1
 
 Puis ouvrir http://127.0.0.1:8000/ dans le navigateur. (Sous Windows, essayer `python` ou `py` à la place de `python3`.)
 
-## Publier avec Cloudflare Pages
+## Publier avec Cloudflare
 
-1. Dans le tableau de bord Cloudflare : **Workers & Pages**, puis **Create**, puis l'onglet **Pages**, puis **Import an existing Git repository**.
-2. Choisir ce dépôt et la branche `main`.
-3. Laisser le champ « Build command » vide et mettre `/` comme dossier de sortie (« Build output directory »).
-4. Chaque fusion sur `main` republie ensuite le site automatiquement.
+Le site est un **Worker Cloudflare nommé `codex-prime`** qui sert les pages (fichiers statiques) et, sur `/api/*`, l'API des fiches. Il est relié au dépôt GitHub.
+- Réglages (onglet *Settings*, puis *Builds* du Worker) : branche de production `main`, commande de build : aucune, commande de déploiement : `npx wrangler deploy`, dossier racine : `/`.
+- La configuration est dans **`wrangler.jsonc`** (à la racine). Le fichier **`.assetsignore`** liste ce qui n'est pas publié comme page (README, `worker/`, etc.). Ajoutez-y tout nouveau fichier qui ne doit pas être public.
+- Chaque fusion sur `main` redéploie le site automatiquement.
+- Cloudflare enlève le `.html` des adresses (`/outils.html` redirige vers `/outils`) : les liens du site continuent de fonctionner.
 
 ## Fiches et commentaires (Worker + R2)
 
@@ -80,19 +83,18 @@ La page `outils.html` marche **sans JavaScript** : la liste et le filtre sont en
 - **Tant que `ACCESS_TEAM_DOMAIN` et `ACCESS_AUD` sont vides dans `worker/wrangler.jsonc`, toute modification est refusée** et les boutons sont désactivés.
 - Aucun mot de passe, aucun jeton ni aucun secret dans le JavaScript ou dans ce dépôt.
 
-**À faire vous-même dans Cloudflare** (je ne demande aucune clé)
-1. Créer le bucket R2 (par défaut `codex-prime-data`, à changer dans `wrangler.jsonc` si besoin). R2 peut demander un moyen de paiement : à vérifier dans votre compte.
-2. Déployer le Worker : `cd worker && npm install && npx wrangler login && npx wrangler deploy`.
-3. Faire répondre le Worker sur **la même adresse que le site**, par exemple `exemple.fr/api/*` (route du Worker). Cela suppose que le site soit sur un domaine de votre compte Cloudflare : une adresse en `pages.dev` ne convient pas. Sans cela, il faudrait ajouter CORS et gérer le cookie de connexion : ce n'est pas prévu.
-4. Créer une application **Cloudflare Access** qui protège `exemple.fr/api/ecriture/*`, avec la liste des personnes autorisées.
-5. Recopier dans `wrangler.jsonc` le domaine d'équipe (`monequipe.cloudflareaccess.com`) et l'« Application Audience (AUD) Tag » de l'application Access, puis redéployer. Ce ne sont pas des secrets.
-6. Ouvrir la page Outils, se connecter, cliquer sur « Initialiser les fiches depuis la liste ».
-7. Prévoir une limite de débit (règle Cloudflare) si les commentaires doivent un jour être ouverts au public. Ce n'est pas fait ici.
+**À faire vous-même dans Cloudflare** (aucune clé à donner)
+1. **Bucket R2** : `codex-prime-data` (déjà créé). Gardez son « URL publique de développement » **désactivée** : seul le Worker doit y accéder.
+2. **Publier** : fusionnez la pull request sur `main`. Cloudflare redéploie `codex-prime` avec `wrangler.jsonc`. Vérifiez dans *Deployments* que le build réussit, puis ouvrez `https://codex-prime.<votre-sous-domaine>.workers.dev/api/etat` : vous devez voir `{"initialise":false,"ecritureConfiguree":false,…}`. Si le build échoue à cause de R2, le jeton « codex-prime build token » manque peut-être d'un droit sur R2 (à vérifier dans son message d'erreur).
+3. **Application Cloudflare Access** (*Zero Trust*, puis *Access*, puis *Applications*, puis *Self-hosted*) : adresse `codex-prime.<votre-sous-domaine>.workers.dev`, chemin **`/api/ecriture/*`** uniquement, règle « Allow » pour votre adresse e-mail. **N'activez pas** l'option « Access » du Worker lui-même : elle protège tout le Worker, donc le site public aussi.
+4. **Recopier deux valeurs** dans `wrangler.jsonc` (modifiable sur github.com) : `ACCESS_TEAM_DOMAIN` (`monequipe.cloudflareaccess.com`) et `ACCESS_AUD` (« Application Audience (AUD) Tag » de l'application). Ce ne sont pas des secrets. Validez sur `main` : le redéploiement est automatique.
+5. **Premier usage** : ouvrez la page Outils, connectez-vous, cliquez sur « Initialiser les fiches depuis la liste ».
+6. Si les commentaires doivent un jour être ouverts au public : prévoir une limite de débit (règle Cloudflare). Ce n'est pas fait ici.
 
 **Tester**
-- `cd worker && npm install && npm test` : tests du Worker avec un faux R2 et un faux Access (jetons signés pour de vrai).
+- `cd worker && npm install && npm test` : tests du Worker avec un faux R2 et un faux Access (jetons signés pour de vrai), puis avec le simulateur R2 de Cloudflare (Miniflare).
 - `npm run essai-local` : sert le site et le Worker sur http://127.0.0.1:8100/ avec stockage en mémoire et connexion simulée (`/__connexion`). C'est une simulation : elle ne prouve rien sur Cloudflare lui-même.
-- `npm run verifier` : construit le Worker sans le déployer (vérifie la configuration).
+- `npm run verifier` : construit le Worker sans le déployer (vérifie la configuration). `npm run dev` : lance le site et l'API avec le simulateur de Cloudflare (lecture seulement, Access absent).
 
 **Limites connues**
 - Un seul niveau d'accès : toute personne autorisée peut tout modifier et commenter. Pas de suppression de fiche ni de commentaire depuis le site.

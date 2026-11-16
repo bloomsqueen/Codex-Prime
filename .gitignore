@@ -17,3 +17,4 @@
 worker/node_modules/
 worker/.wrangler/
 .wrangler-sortie/
+.wrangler/
