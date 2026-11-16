@@ -20,7 +20,7 @@ Les personnes qui suivent les cours adultes de Paris. Aucune connaissance en pro
 | `accessibilite.html` | Déclaration d'accessibilité (état « non conforme ») |
 | `donnees-personnelles.html` | Cookies, traceurs et données personnelles |
 | `mentions-legales.html` | Mentions légales |
-| `outils.html` | Comparatif de 15 outils d'IA (9 du dépôt [awesome-vibecoding](https://github.com/Scap-Mehdi/awesome-vibecoding), 6 ressources d'un post sur X), avec un avertissement sur les sources et leur fiabilité |
+| `outils.html` | 25 ressources pour créer un site avec l'IA (prompts, composants, animations, inspiration), à filtrer par catégorie sans JavaScript, avec un avertissement sur la source et sa fiabilité |
 
 Chaque page a le même pied de page, avec les liens vers Contact, Aide, Info site, Accessibilité, Cookies et données personnelles, et Mentions légales. La page « Cookies et données personnelles » est marquée « en construction » : les informations sur le traitement des données (responsable, finalité, droits) sont à ajouter avant d'activer le formulaire de contact.
 
@@ -31,7 +31,7 @@ C'est un site statique, sans framework ni dépendance : du HTML et du CSS.
 ```
 index.html            accueil
 connaissances.html    glossaire
-outils.html           comparatif d'outils d'IA
+outils.html           liste de 25 ressources filtrable par catégorie
 contact.html          formulaire de contact (maquette)
 aide.html             aide
 info-site.html        informations sur le site

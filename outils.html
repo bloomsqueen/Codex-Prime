@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <meta name="description" content="Comparatif de 15 outils d'IA pour créer un site ou une application, tirés du dépôt awesome-vibecoding et d'un post sur X.">
-  <title>Outils : comparatif de 15 outils d'IA · Codex Prime</title>
+  <meta name="description" content="25 ressources pour créer un site avec l'IA : prompts, composants, animations et inspiration, à filtrer par catégorie.">
+  <title>Outils : 25 ressources à filtrer par catégorie · Codex Prime</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -24,159 +24,175 @@
 
   <main id="contenu">
     <header>
-      <h1>15 outils d'IA, comparés</h1>
-      <p class="lead">Pour créer un site ou une application sans écrire le code soi-même.</p>
-      <p class="meta">Analyse du 12 octobre 2026. Je n'ai testé aucun de ces outils.</p>
+      <h1>25 ressources pour créer avec l'IA</h1>
+      <p class="lead">Prompts, composants, animations et inspiration à donner à l'IA pour créer un site.</p>
+      <p class="meta">Liste du 16 novembre 2026. Je n'ai testé aucune de ces ressources.</p>
     </header>
 
-    <p class="group-note">Les prix ne sont pas examinés : consultez le site de chaque outil avant de vous inscrire.</p>
+    <section aria-labelledby="liste">
+      <h2 id="liste">La liste</h2>
+      <p class="group-note">Les prix ne sont pas examinés : consultez le site de chaque ressource avant de vous inscrire.</p>
 
-    <nav aria-label="Groupes d'outils">
-      <h2 id="choisir">Que voulez-vous faire ?</h2>
-      <ul class="jump">
-        <li><a href="#creer">Créer une application vite<span>4 outils</span></a></li>
-        <li><a href="#assistants">Être aidé pour écrire du code<span>5 outils</span></a></li>
-        <li><a href="#apparence">Soigner l'apparence<span>6 ressources</span></a></li>
-      </ul>
-    </nav>
+      <div class="filtrable">
+        <fieldset class="filtre">
+          <legend>Filtrer par catégorie</legend>
+          <div class="filtre-choix">
+          <label for="f-toutes"><input class="visually-hidden" type="radio" name="categorie" id="f-toutes" checked>Toutes (25)</label>
+          <label for="f-inspiration"><input class="visually-hidden" type="radio" name="categorie" id="f-inspiration">Inspiration (4)</label>
+          <label for="f-design-system"><input class="visually-hidden" type="radio" name="categorie" id="f-design-system">Design system (3)</label>
+          <label for="f-prompts"><input class="visually-hidden" type="radio" name="categorie" id="f-prompts">Prompts (2)</label>
+          <label for="f-composants"><input class="visually-hidden" type="radio" name="categorie" id="f-composants">Composants UI (7)</label>
+          <label for="f-animation"><input class="visually-hidden" type="radio" name="categorie" id="f-animation">Animation (5)</label>
+          <label for="f-effets"><input class="visually-hidden" type="radio" name="categorie" id="f-effets">Effets et visuels (4)</label>
+          </div>
+        </fieldset>
 
-    <section aria-labelledby="creer">
-      <h2 id="creer">Créer une application vite</h2>
-      <p class="group-note">Ces outils fonctionnent à partir d'une description écrite.</p>
-      <div class="table-wrap">
-        <table role="table">
-          <caption class="visually-hidden">Outils pour créer une application à partir d'une description</caption>
-          <thead role="rowgroup">
-            <tr role="row">
-              <th scope="col" role="columnheader">Outil</th>
-              <th scope="col" role="columnheader">À quoi il sert</th>
+        <div class="table-wrap">
+          <table>
+            <caption class="visually-hidden">Ressources pour créer un site avec l'IA, avec leur catégorie</caption>
+            <thead>
+              <tr>
+                <th scope="col">Ressource</th>
+                <th scope="col">Catégorie</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr data-cat="prompts">
+              <th scope="row"><a href="https://scrolltide.co">Scrolltide</a><span class="domaine">scrolltide.co</span></th>
+              <td>Prompts + code (sites 3D / scroll)</td>
             </tr>
-          </thead>
-          <tbody role="rowgroup">
-            <tr role="row">
-              <th scope="row" role="rowheader"><a href="https://lovable.dev/">Lovable</a></th>
-              <td role="cell">Crée une application complète à partir d'une description, avec une base de données (Supabase).</td>
+            <tr data-cat="inspiration">
+              <th scope="row"><a href="https://minimal.gallery">Minimal Gallery</a><span class="domaine">minimal.gallery</span></th>
+              <td>Inspiration</td>
             </tr>
-            <tr role="row">
-              <th scope="row" role="rowheader"><a href="https://bolt.new/">Bolt.new</a></th>
-              <td role="cell">Crée une application à partir d'une description en langage naturel. Édité par StackBlitz.</td>
+            <tr data-cat="inspiration">
+              <th scope="row"><a href="https://godly.website">Godly</a><span class="domaine">godly.website</span></th>
+              <td>Inspiration</td>
             </tr>
-            <tr role="row">
-              <th scope="row" role="rowheader"><a href="https://replit.com/">Replit</a></th>
-              <td role="cell">Construit et améliore une application avec son assistant, Replit Agent.</td>
+            <tr data-cat="design-system">
+              <th scope="row"><a href="https://styles.refero.design">Refero Styles</a><span class="domaine">styles.refero.design</span></th>
+              <td>Design system / typographie</td>
             </tr>
-            <tr role="row">
-              <th scope="row" role="rowheader"><a href="https://v0.app/">v0</a></th>
-              <td role="cell">Génère des écrans et des composants d'interface. Édité par Vercel.</td>
+            <tr data-cat="design-system">
+              <th scope="row"><a href="https://component.gallery">Component Gallery</a><span class="domaine">component.gallery</span></th>
+              <td>Design system</td>
             </tr>
-          </tbody>
-        </table>
+            <tr data-cat="inspiration">
+              <th scope="row"><a href="https://mobbin.com">Mobbin</a><span class="domaine">mobbin.com</span></th>
+              <td>Inspiration (parcours d'apps)</td>
+            </tr>
+            <tr data-cat="design-system">
+              <th scope="row"><a href="https://designmd.ai">DESIGNmd</a><span class="domaine">designmd.ai</span></th>
+              <td>Design system en Markdown pour agents</td>
+            </tr>
+            <tr data-cat="prompts">
+              <th scope="row"><a href="https://vibeprompts.dev">VibePrompt</a><span class="domaine">vibeprompts.dev</span></th>
+              <td>Prompts</td>
+            </tr>
+            <tr data-cat="composants">
+              <th scope="row"><a href="https://21st.dev">21st.dev</a><span class="domaine">21st.dev</span></th>
+              <td>Composants UI (MCP)</td>
+            </tr>
+            <tr data-cat="animation">
+              <th scope="row"><a href="https://kinetics.colorion.co">Kinetics</a><span class="domaine">kinetics.colorion.co</span></th>
+              <td>Animation</td>
+            </tr>
+            <tr data-cat="composants">
+              <th scope="row"><a href="https://ui.shadcn.com">shadcn/ui</a><span class="domaine">ui.shadcn.com</span></th>
+              <td>Composants UI</td>
+            </tr>
+            <tr data-cat="composants">
+              <th scope="row"><a href="https://ui.aceternity.com">Aceternity UI</a><span class="domaine">ui.aceternity.com</span></th>
+              <td>Composants UI animés</td>
+            </tr>
+            <tr data-cat="composants">
+              <th scope="row"><a href="https://magicui.design">Magic UI</a><span class="domaine">magicui.design</span></th>
+              <td>Composants UI</td>
+            </tr>
+            <tr data-cat="animation">
+              <th scope="row"><a href="https://motion-primitives.com">Motion Primitives</a><span class="domaine">motion-primitives.com</span></th>
+              <td>Animation</td>
+            </tr>
+            <tr data-cat="composants">
+              <th scope="row"><a href="https://uiverse.io">Uiverse</a><span class="domaine">uiverse.io</span></th>
+              <td>Composants UI (communauté)</td>
+            </tr>
+            <tr data-cat="composants">
+              <th scope="row"><a href="https://shadcnblocks.com">Shadcnblocks</a><span class="domaine">shadcnblocks.com</span></th>
+              <td>Blocs UI</td>
+            </tr>
+            <tr data-cat="composants">
+              <th scope="row"><a href="https://mapcn.dev">mapcn</a><span class="domaine">mapcn.dev</span></th>
+              <td>Composants de carte</td>
+            </tr>
+            <tr data-cat="inspiration">
+              <th scope="row"><a href="https://awwwards.com">Awwwards</a><span class="domaine">awwwards.com</span></th>
+              <td>Inspiration</td>
+            </tr>
+            <tr data-cat="effets">
+              <th scope="row"><a href="https://glass.samasante.com">Liquid Glass</a><span class="domaine">glass.samasante.com</span></th>
+              <td>Effets UI</td>
+            </tr>
+            <tr data-cat="animation">
+              <th scope="row"><a href="https://text-effects.colorion.co">CSS Text Effects</a><span class="domaine">text-effects.colorion.co</span></th>
+              <td>Animation texte</td>
+            </tr>
+            <tr data-cat="animation">
+              <th scope="row"><a href="https://circleloaders.dominikakissi.com">Circle Loaders</a><span class="domaine">circleloaders.dominikakissi.com</span></th>
+              <td>Animation</td>
+            </tr>
+            <tr data-cat="effets">
+              <th scope="row"><a href="https://gradientbuttons.colorion.co">Gradient Buttons</a><span class="domaine">gradientbuttons.colorion.co</span></th>
+              <td>Effets UI</td>
+            </tr>
+            <tr data-cat="effets">
+              <th scope="row"><a href="https://shadertoy.com">Shadertoy</a><span class="domaine">shadertoy.com</span></th>
+              <td>Shaders</td>
+            </tr>
+            <tr data-cat="effets">
+              <th scope="row"><a href="https://3dicons.co">3Dicons</a><span class="domaine">3dicons.co</span></th>
+              <td>Icônes 3D</td>
+            </tr>
+            <tr data-cat="animation">
+              <th scope="row"><a href="https://animejs.com">Anime.js</a><span class="domaine">animejs.com</span></th>
+              <td>Bibliothèque d'animation JS</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
 
-    <section aria-labelledby="assistants">
-      <h2 id="assistants">Être aidé pour écrire du code</h2>
-      <p class="group-note">Un <strong>terminal</strong> est une fenêtre où l'on tape des commandes. Un <strong>éditeur</strong> est un programme pour écrire du code. Les outils ci-dessous demandent plus de pratique.</p>
-      <div class="table-wrap">
-        <table role="table">
-          <caption class="visually-hidden">Assistants d'aide à l'écriture de code</caption>
-          <thead role="rowgroup">
-            <tr role="row">
-              <th scope="col" role="columnheader">Outil</th>
-              <th scope="col" role="columnheader">À quoi il sert</th>
-            </tr>
-          </thead>
-          <tbody role="rowgroup">
-            <tr role="row">
-              <th scope="row" role="rowheader"><a href="https://code.claude.com/docs/en/overview">Claude Code</a></th>
-              <td role="cell">Assistant qui travaille dans un terminal (fenêtre de commandes) et sur un projet entier.</td>
-            </tr>
-            <tr role="row">
-              <th scope="row" role="rowheader"><a href="https://www.cursor.com/">Cursor</a></th>
-              <td role="cell">Éditeur de code avec un assistant pour écrire, corriger et relire.</td>
-            </tr>
-            <tr role="row">
-              <th scope="row" role="rowheader"><a href="https://github.com/features/copilot">GitHub Copilot</a></th>
-              <td role="cell">Aide à écrire du code dans GitHub et dans les éditeurs.</td>
-            </tr>
-            <tr role="row">
-              <th scope="row" role="rowheader"><a href="https://github.com/google-gemini/gemini-cli">Gemini CLI</a></th>
-              <td role="cell">Assistant en terminal, ouvert (code public). Pas d'abonnement grand public d'après le dépôt. Accès par clé d'API (une clé d'accès personnelle) ou offre entreprise.</td>
-            </tr>
-            <tr role="row">
-              <th scope="row" role="rowheader"><a href="https://openai.com/codex/">OpenAI Codex CLI</a></th>
-              <td role="cell">Assistant d'OpenAI qui s'exécute dans le terminal de l'ordinateur.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section aria-labelledby="apparence">
-      <h2 id="apparence">Soigner l'apparence</h2>
-      <p class="group-note">Ce sont des ressources à donner à l'IA, pas des IA. Descriptions non vérifiées : je n'ai pas ouvert ces sites, et les chiffres sont des annonces.</p>
-      <div class="table-wrap">
-        <table role="table">
-          <caption class="visually-hidden">Ressources de design à fournir à l'IA</caption>
-          <thead role="rowgroup">
-            <tr role="row">
-              <th scope="col" role="columnheader">Outil</th>
-              <th scope="col" role="columnheader">À quoi il sert</th>
-            </tr>
-          </thead>
-          <tbody role="rowgroup">
-            <tr role="row">
-              <th scope="row" role="rowheader"><a href="https://scrollslide.co">Scrollslide</a></th>
-              <td role="cell">Prompts et code prêts à copier dans Claude, Cursor ou Lovable, pour des sites animés. Annonce : « 600+ prompts ».</td>
-            </tr>
-            <tr role="row">
-              <th scope="row" role="rowheader"><a href="https://21st.dev">21st.dev</a></th>
-              <td role="cell">Catalogue de composants (boutons, formulaires…) que l'IA peut utiliser via <a href="connaissances.html#mcp">MCP</a>.</td>
-            </tr>
-            <tr role="row">
-              <th scope="row" role="rowheader"><a href="https://ui.shadcn.com">shadcn/ui</a></th>
-              <td role="cell">Composants d'interface réutilisables. Décrit comme la référence pour une interface propre.</td>
-            </tr>
-            <tr role="row">
-              <th scope="row" role="rowheader"><a href="https://designmd.ai">DESIGN.md</a></th>
-              <td role="cell">Styles visuels écrits en texte, que l'IA peut lire pour respecter une charte.</td>
-            </tr>
-            <tr role="row">
-              <th scope="row" role="rowheader"><a href="https://styles.refero.design">Refero Styles</a></th>
-              <td role="cell">Annonce : « 2 000+ » styles de vrais produits, avec leurs polices.</td>
-            </tr>
-            <tr role="row">
-              <th scope="row" role="rowheader"><a href="https://component.gallery">Component Gallery</a></th>
-              <td role="cell">Annonce : « 2 600+ » exemples d'un même élément d'interface dans de grands systèmes de design.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <section aria-labelledby="lexique">
+      <h2 id="lexique">Quelques mots</h2>
+      <dl class="lexique">
+        <dt>Prompt</dt>
+        <dd>Le texte que l'on donne à l'IA pour lui demander quelque chose.</dd>
+        <dt>Composant</dt>
+        <dd>Un élément d'interface prêt à l'emploi : bouton, formulaire, menu, carte…</dd>
+        <dt>Design system</dt>
+        <dd>Un ensemble de règles (couleurs, polices, formes) qui donne le même style à tout un site.</dd>
+        <dt>MCP</dt>
+        <dd>Une norme qui branche l'IA à des outils. Voir <a href="connaissances.html#mcp">Connaissances</a>.</dd>
+        <dt>Markdown</dt>
+        <dd>Un format de texte très simple, lisible par une personne comme par une IA.</dd>
+        <dt>Shader</dt>
+        <dd>Un petit programme qui dessine des effets graphiques à l'écran.</dd>
+      </dl>
     </section>
 
     <section class="disclaimer" aria-labelledby="sources">
       <h2 id="sources">Sources et fiabilité</h2>
-      <p>Les outils viennent de deux sources, qui n'ont pas le même niveau de preuve.</p>
-
-      <h3>Dépôt GitHub awesome-vibecoding : fiabilité moyenne à bonne</h3>
-      <p>Source de Lovable, Bolt.new, Replit, v0, Claude Code, Cursor, GitHub Copilot, Gemini CLI et OpenAI Codex CLI. <a href="https://github.com/Scap-Mehdi/awesome-vibecoding/blob/main/README.fr.md">Scap-Mehdi/awesome-vibecoding</a>, fichier <code>README.fr.md</code>, relu le 12 octobre 2026. Ces 9 outils portent tous la date de vérification du 18 septembre 2026.</p>
-      <ul>
-        <li><strong>Pour :</strong> une date par entrée, un accès et une licence indiqués, des fiches de preuves pour la plupart des entrées.</li>
-        <li><strong>Contre :</strong> le dépôt est mis à jour par un agent automatique. La mention « vérifié » est en partie automatisée. Les prix sont souvent non examinés (« à vérifier »).</li>
-        <li><strong>Non vérifié par moi :</strong> je n'ai ouvert ni les fiches de preuves ni les sites des outils.</li>
-      </ul>
-
       <h3>Post sur X : fiabilité faible</h3>
-      <p>Source de Scrollslide, 21st.dev, shadcn/ui, DESIGN.md, Refero Styles et Component Gallery. Capture d'écran d'un post d'un compte au prénom Himanshu, qui se présente comme fondateur de Scrollslide.</p>
+      <p>La liste vient d'une capture d'écran d'un post sur X, publié par un compte au prénom Himanshu. Les catégories sont celles du site, pas celles du post.</p>
       <ul>
-        <li><strong>Contre :</strong> la première ressource de la liste est le produit de l'auteur. Aucune date, aucun prix, aucune preuve par entrée. Les chiffres (« 600+ », « 2 000+ ») sont des annonces.</li>
-        <li><strong>Non vérifié :</strong> la capture est en basse résolution. Le nom de famille, l'identifiant, l'année et les compteurs sont illisibles. Je n'ai pas ouvert les sites cités : les descriptions viennent uniquement du post.</li>
+        <li><strong>Contre :</strong> aucune date, aucun prix et aucune preuve ne sont donnés pour les ressources. Le post peut faire la promotion de produits de son auteur : le site de la première ressource renvoie vers des comptes au même prénom que lui, ce qui reste à vérifier.</li>
+        <li><strong>Non vérifié :</strong> la capture est en basse résolution. Le nom de famille, l'identifiant, l'année et les compteurs sont illisibles. Je n'ai ouvert qu'une seule adresse (Scrolltide), uniquement pour vérifier qu'elle existe. Je n'ai pas ouvert les autres sites.</li>
       </ul>
 
       <h3>Ce que cette page ne dit pas</h3>
-      <p>Aucun classement : je n'ai pas comparé la qualité des résultats. Les prix changent souvent : vérifiez-les sur le site de chaque outil avant de vous inscrire. Les catégories sont les miennes, pour faciliter la lecture.</p>
+      <p>Aucun classement : je n'ai pas comparé la qualité des ressources. Les prix changent souvent : vérifiez-les sur le site de chaque ressource avant de vous inscrire.</p>
     </section>
-
   </main>
 
   <footer class="site-footer">
@@ -194,7 +210,7 @@
         </ul>
       </nav>
     </div>
-    <p class="footer-note">Site en construction. Dernière mise à jour : 9 novembre 2026.</p>
+    <p class="footer-note">Site en construction. Dernière mise à jour : 16 novembre 2026.</p>
   </footer>
 </body>
 </html>
