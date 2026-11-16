@@ -1,0 +1,17 @@
+{
+  "name": "codex-prime-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Worker Cloudflare : fiches d'outils et commentaires dans R2.",
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "dev": "wrangler dev",
+    "verifier": "wrangler deploy --dry-run --outdir ../.wrangler-sortie",
+    "deploy": "wrangler deploy",
+    "essai-local": "node test/serveur-local.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "^4.163.0"
+  }
+}

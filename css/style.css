@@ -482,6 +482,7 @@ tbody th {
 }
 
 /* Une règle par catégorie : on masque les lignes des autres catégories */
+.filtrable:has(#f-outils-ia:checked) tbody tr:not([data-cat="outils-ia"]),
 .filtrable:has(#f-inspiration:checked) tbody tr:not([data-cat="inspiration"]),
 .filtrable:has(#f-design-system:checked) tbody tr:not([data-cat="design-system"]),
 .filtrable:has(#f-prompts:checked) tbody tr:not([data-cat="prompts"]),
@@ -505,6 +506,132 @@ tbody th {
 
 .lexique dd {
   margin: 0 0 0.75rem;
+}
+
+/* ---------- Fiches, commentaires et fenêtres ---------- */
+td {
+  overflow-wrap: anywhere;
+}
+
+.description {
+  margin: 0.4rem 0;
+}
+
+.infos {
+  margin: 0.4rem 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0.6rem 0 0.25rem;
+}
+
+.coms {
+  margin: 0.5rem 0;
+}
+
+.coms summary {
+  min-height: 2.75rem;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.liste-coms {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.liste-coms li {
+  max-width: none;
+  margin: 0 0 0.6rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 0.75rem;
+}
+
+.com-texte {
+  margin: 0;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.liste-coms .meta {
+  font-size: 0.9rem;
+}
+
+#zone-init {
+  margin: 0 0 1.5rem;
+  padding: 1rem;
+  border: 2px dashed var(--ink);
+  border-radius: 1rem;
+}
+
+.fenetre {
+  width: min(40rem, calc(100% - 2rem));
+  max-height: calc(100% - 2rem);
+  padding: 1.25rem 1.5rem;
+  background: var(--paper);
+  color: var(--ink);
+  border: 3px solid var(--ink);
+  border-radius: 1rem;
+  box-shadow: 8px 8px 0 var(--accent);
+  overflow: auto;
+}
+
+.fenetre::backdrop {
+  background: color-mix(in srgb, var(--ink) 65%, transparent);
+}
+
+.fenetre h2 {
+  margin: 0 0 1rem;
+  font-size: 1.4rem;
+}
+
+.alerte:not(:empty) {
+  margin: 0 0 1rem;
+  padding: 0.6rem 0.9rem;
+  border: 3px solid var(--ink);
+  border-radius: 0.75rem;
+  background: var(--surface);
+  font-weight: 700;
+}
+
+.erreur-champ:not(:empty) {
+  margin: 0.25rem 0 0;
+  font-weight: 700;
+}
+
+[aria-invalid="true"] {
+  border-style: dashed;
+  border-width: 4px;
+}
+
+select {
+  display: block;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.6rem 0.75rem;
+  background: var(--paper);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  border-radius: 0.75rem;
+  font: inherit;
+}
+
+select:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+  box-shadow: 4px 4px 0 var(--accent);
 }
 
 /* ---------- Avertissement ---------- */
@@ -655,11 +782,32 @@ textarea:focus-visible {
   box-shadow: 4px 4px 0 var(--ink);
   font: inherit;
   font-weight: 800;
-  cursor: not-allowed;
+  cursor: pointer;
 }
 
+.button:hover {
+  background: var(--ink);
+  color: var(--paper);
+  box-shadow: 4px 4px 0 var(--accent);
+}
+
+.button.petit {
+  padding: 0.4rem 1rem;
+  font-size: 1rem;
+}
+
+.button.secondaire {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* Bouton indisponible : trait pointillé et fond neutre (pas seulement la couleur) */
 .button[aria-disabled="true"] {
-  opacity: 1;
+  background: var(--surface);
+  color: var(--ink);
+  border-style: dashed;
+  box-shadow: none;
+  cursor: not-allowed;
 }
 
 .info {
@@ -765,8 +913,15 @@ textarea:focus-visible {
 
   tbody th {
     white-space: normal;
-    width: 45%;
+    width: 38%;
     overflow-wrap: anywhere;
+  }
+
+  /* Boutons des fiches : pleine largeur de la cellule, texte sur plusieurs lignes si besoin */
+  .actions .button {
+    flex: 1 1 100%;
+    white-space: normal;
+    text-align: center;
   }
 }
 

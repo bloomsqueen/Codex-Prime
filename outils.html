@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <meta name="description" content="25 ressources pour créer un site avec l'IA : prompts, composants, animations et inspiration, à filtrer par catégorie.">
-  <title>Outils : 25 ressources à filtrer par catégorie · Codex Prime</title>
+  <meta name="description" content="34 ressources et outils d'IA pour créer un site : prompts, composants, animations, inspiration. À filtrer par catégorie, avec fiches et commentaires.">
+  <title>Outils : 34 ressources à filtrer par catégorie · Codex Prime</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/outils.js" defer data-api="/api"></script>
 </head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -24,138 +25,263 @@
 
   <main id="contenu">
     <header>
-      <h1>25 ressources pour créer avec l'IA</h1>
-      <p class="lead">Prompts, composants, animations et inspiration à donner à l'IA pour créer un site.</p>
+      <h1>34 ressources pour créer avec l'IA</h1>
+      <p class="lead">Prompts, composants, animations, inspiration et outils d'IA, pour créer un site.</p>
       <p class="meta">Liste du 16 novembre 2026. Je n'ai testé aucune de ces ressources.</p>
     </header>
 
     <section aria-labelledby="liste">
       <h2 id="liste">La liste</h2>
       <p class="group-note">Les prix ne sont pas examinés : consultez le site de chaque ressource avant de vous inscrire.</p>
+      <p class="meta" id="etat-api" role="status"></p>
+      <div id="zone-init" hidden></div>
 
       <div class="filtrable">
         <fieldset class="filtre">
           <legend>Filtrer par catégorie</legend>
           <div class="filtre-choix">
-          <label for="f-toutes"><input class="visually-hidden" type="radio" name="categorie" id="f-toutes" checked>Toutes (25)</label>
-          <label for="f-inspiration"><input class="visually-hidden" type="radio" name="categorie" id="f-inspiration">Inspiration (4)</label>
-          <label for="f-design-system"><input class="visually-hidden" type="radio" name="categorie" id="f-design-system">Design system (3)</label>
-          <label for="f-prompts"><input class="visually-hidden" type="radio" name="categorie" id="f-prompts">Prompts (2)</label>
-          <label for="f-composants"><input class="visually-hidden" type="radio" name="categorie" id="f-composants">Composants UI (7)</label>
-          <label for="f-animation"><input class="visually-hidden" type="radio" name="categorie" id="f-animation">Animation (5)</label>
-          <label for="f-effets"><input class="visually-hidden" type="radio" name="categorie" id="f-effets">Effets et visuels (4)</label>
+            <label for="f-toutes"><input class="visually-hidden" type="radio" name="categorie" id="f-toutes" checked>Toutes (34)</label>
+            <label for="f-outils-ia"><input class="visually-hidden" type="radio" name="categorie" id="f-outils-ia">Outils d&#x27;IA (9)</label>
+            <label for="f-inspiration"><input class="visually-hidden" type="radio" name="categorie" id="f-inspiration">Inspiration (4)</label>
+            <label for="f-design-system"><input class="visually-hidden" type="radio" name="categorie" id="f-design-system">Design system (3)</label>
+            <label for="f-prompts"><input class="visually-hidden" type="radio" name="categorie" id="f-prompts">Prompts (2)</label>
+            <label for="f-composants"><input class="visually-hidden" type="radio" name="categorie" id="f-composants">Composants UI (7)</label>
+            <label for="f-animation"><input class="visually-hidden" type="radio" name="categorie" id="f-animation">Animation (5)</label>
+            <label for="f-effets"><input class="visually-hidden" type="radio" name="categorie" id="f-effets">Effets et visuels (4)</label>
           </div>
         </fieldset>
 
         <div class="table-wrap">
           <table>
-            <caption class="visually-hidden">Ressources pour créer un site avec l'IA, avec leur catégorie</caption>
+            <caption class="visually-hidden">Ressources et outils pour créer un site avec l'IA, avec leur catégorie</caption>
             <thead>
               <tr>
                 <th scope="col">Ressource</th>
-                <th scope="col">Catégorie</th>
+                <th scope="col">Catégorie et fiche</th>
               </tr>
             </thead>
             <tbody>
-            <tr data-cat="prompts">
-              <th scope="row"><a href="https://scrolltide.co">Scrolltide</a><span class="domaine">scrolltide.co</span></th>
-              <td>Prompts + code (sites 3D / scroll)</td>
+            <tr data-outil-id="outil-001" data-cat="prompts">
+              <th scope="row"><a class="nom" href="https://scrolltide.co">Scrolltide</a><span class="domaine">scrolltide.co</span></th>
+              <td>
+                <span class="categorie">Prompts + code (sites 3D / scroll)</span>
+              </td>
             </tr>
-            <tr data-cat="inspiration">
-              <th scope="row"><a href="https://minimal.gallery">Minimal Gallery</a><span class="domaine">minimal.gallery</span></th>
-              <td>Inspiration</td>
+            <tr data-outil-id="outil-002" data-cat="inspiration">
+              <th scope="row"><a class="nom" href="https://minimal.gallery">Minimal Gallery</a><span class="domaine">minimal.gallery</span></th>
+              <td>
+                <span class="categorie">Inspiration</span>
+              </td>
             </tr>
-            <tr data-cat="inspiration">
-              <th scope="row"><a href="https://godly.website">Godly</a><span class="domaine">godly.website</span></th>
-              <td>Inspiration</td>
+            <tr data-outil-id="outil-003" data-cat="inspiration">
+              <th scope="row"><a class="nom" href="https://godly.website">Godly</a><span class="domaine">godly.website</span></th>
+              <td>
+                <span class="categorie">Inspiration</span>
+              </td>
             </tr>
-            <tr data-cat="design-system">
-              <th scope="row"><a href="https://styles.refero.design">Refero Styles</a><span class="domaine">styles.refero.design</span></th>
-              <td>Design system / typographie</td>
+            <tr data-outil-id="outil-004" data-cat="design-system">
+              <th scope="row"><a class="nom" href="https://styles.refero.design">Refero Styles</a><span class="domaine">styles.refero.design</span></th>
+              <td>
+                <span class="categorie">Design system / typographie</span>
+              </td>
             </tr>
-            <tr data-cat="design-system">
-              <th scope="row"><a href="https://component.gallery">Component Gallery</a><span class="domaine">component.gallery</span></th>
-              <td>Design system</td>
+            <tr data-outil-id="outil-005" data-cat="design-system">
+              <th scope="row"><a class="nom" href="https://component.gallery">Component Gallery</a><span class="domaine">component.gallery</span></th>
+              <td>
+                <span class="categorie">Design system</span>
+              </td>
             </tr>
-            <tr data-cat="inspiration">
-              <th scope="row"><a href="https://mobbin.com">Mobbin</a><span class="domaine">mobbin.com</span></th>
-              <td>Inspiration (parcours d'apps)</td>
+            <tr data-outil-id="outil-006" data-cat="inspiration">
+              <th scope="row"><a class="nom" href="https://mobbin.com">Mobbin</a><span class="domaine">mobbin.com</span></th>
+              <td>
+                <span class="categorie">Inspiration (parcours d&#x27;apps)</span>
+              </td>
             </tr>
-            <tr data-cat="design-system">
-              <th scope="row"><a href="https://designmd.ai">DESIGNmd</a><span class="domaine">designmd.ai</span></th>
-              <td>Design system en Markdown pour agents</td>
+            <tr data-outil-id="outil-007" data-cat="design-system">
+              <th scope="row"><a class="nom" href="https://designmd.ai">DESIGNmd</a><span class="domaine">designmd.ai</span></th>
+              <td>
+                <span class="categorie">Design system en Markdown pour agents</span>
+              </td>
             </tr>
-            <tr data-cat="prompts">
-              <th scope="row"><a href="https://vibeprompts.dev">VibePrompt</a><span class="domaine">vibeprompts.dev</span></th>
-              <td>Prompts</td>
+            <tr data-outil-id="outil-008" data-cat="prompts">
+              <th scope="row"><a class="nom" href="https://vibeprompts.dev">VibePrompt</a><span class="domaine">vibeprompts.dev</span></th>
+              <td>
+                <span class="categorie">Prompts</span>
+              </td>
             </tr>
-            <tr data-cat="composants">
-              <th scope="row"><a href="https://21st.dev">21st.dev</a><span class="domaine">21st.dev</span></th>
-              <td>Composants UI (MCP)</td>
+            <tr data-outil-id="outil-009" data-cat="composants">
+              <th scope="row"><a class="nom" href="https://21st.dev">21st.dev</a><span class="domaine">21st.dev</span></th>
+              <td>
+                <span class="categorie">Composants UI (MCP)</span>
+              </td>
             </tr>
-            <tr data-cat="animation">
-              <th scope="row"><a href="https://kinetics.colorion.co">Kinetics</a><span class="domaine">kinetics.colorion.co</span></th>
-              <td>Animation</td>
+            <tr data-outil-id="outil-010" data-cat="animation">
+              <th scope="row"><a class="nom" href="https://kinetics.colorion.co">Kinetics</a><span class="domaine">kinetics.colorion.co</span></th>
+              <td>
+                <span class="categorie">Animation</span>
+              </td>
             </tr>
-            <tr data-cat="composants">
-              <th scope="row"><a href="https://ui.shadcn.com">shadcn/ui</a><span class="domaine">ui.shadcn.com</span></th>
-              <td>Composants UI</td>
+            <tr data-outil-id="outil-011" data-cat="composants">
+              <th scope="row"><a class="nom" href="https://ui.shadcn.com">shadcn/ui</a><span class="domaine">ui.shadcn.com</span></th>
+              <td>
+                <span class="categorie">Composants UI</span>
+              </td>
             </tr>
-            <tr data-cat="composants">
-              <th scope="row"><a href="https://ui.aceternity.com">Aceternity UI</a><span class="domaine">ui.aceternity.com</span></th>
-              <td>Composants UI animés</td>
+            <tr data-outil-id="outil-012" data-cat="composants">
+              <th scope="row"><a class="nom" href="https://ui.aceternity.com">Aceternity UI</a><span class="domaine">ui.aceternity.com</span></th>
+              <td>
+                <span class="categorie">Composants UI animés</span>
+              </td>
             </tr>
-            <tr data-cat="composants">
-              <th scope="row"><a href="https://magicui.design">Magic UI</a><span class="domaine">magicui.design</span></th>
-              <td>Composants UI</td>
+            <tr data-outil-id="outil-013" data-cat="composants">
+              <th scope="row"><a class="nom" href="https://magicui.design">Magic UI</a><span class="domaine">magicui.design</span></th>
+              <td>
+                <span class="categorie">Composants UI</span>
+              </td>
             </tr>
-            <tr data-cat="animation">
-              <th scope="row"><a href="https://motion-primitives.com">Motion Primitives</a><span class="domaine">motion-primitives.com</span></th>
-              <td>Animation</td>
+            <tr data-outil-id="outil-014" data-cat="animation">
+              <th scope="row"><a class="nom" href="https://motion-primitives.com">Motion Primitives</a><span class="domaine">motion-primitives.com</span></th>
+              <td>
+                <span class="categorie">Animation</span>
+              </td>
             </tr>
-            <tr data-cat="composants">
-              <th scope="row"><a href="https://uiverse.io">Uiverse</a><span class="domaine">uiverse.io</span></th>
-              <td>Composants UI (communauté)</td>
+            <tr data-outil-id="outil-015" data-cat="composants">
+              <th scope="row"><a class="nom" href="https://uiverse.io">Uiverse</a><span class="domaine">uiverse.io</span></th>
+              <td>
+                <span class="categorie">Composants UI (communauté)</span>
+              </td>
             </tr>
-            <tr data-cat="composants">
-              <th scope="row"><a href="https://shadcnblocks.com">Shadcnblocks</a><span class="domaine">shadcnblocks.com</span></th>
-              <td>Blocs UI</td>
+            <tr data-outil-id="outil-016" data-cat="composants">
+              <th scope="row"><a class="nom" href="https://shadcnblocks.com">Shadcnblocks</a><span class="domaine">shadcnblocks.com</span></th>
+              <td>
+                <span class="categorie">Blocs UI</span>
+              </td>
             </tr>
-            <tr data-cat="composants">
-              <th scope="row"><a href="https://mapcn.dev">mapcn</a><span class="domaine">mapcn.dev</span></th>
-              <td>Composants de carte</td>
+            <tr data-outil-id="outil-017" data-cat="composants">
+              <th scope="row"><a class="nom" href="https://mapcn.dev">mapcn</a><span class="domaine">mapcn.dev</span></th>
+              <td>
+                <span class="categorie">Composants de carte</span>
+              </td>
             </tr>
-            <tr data-cat="inspiration">
-              <th scope="row"><a href="https://awwwards.com">Awwwards</a><span class="domaine">awwwards.com</span></th>
-              <td>Inspiration</td>
+            <tr data-outil-id="outil-018" data-cat="inspiration">
+              <th scope="row"><a class="nom" href="https://awwwards.com">Awwwards</a><span class="domaine">awwwards.com</span></th>
+              <td>
+                <span class="categorie">Inspiration</span>
+              </td>
             </tr>
-            <tr data-cat="effets">
-              <th scope="row"><a href="https://glass.samasante.com">Liquid Glass</a><span class="domaine">glass.samasante.com</span></th>
-              <td>Effets UI</td>
+            <tr data-outil-id="outil-019" data-cat="effets">
+              <th scope="row"><a class="nom" href="https://glass.samasante.com">Liquid Glass</a><span class="domaine">glass.samasante.com</span></th>
+              <td>
+                <span class="categorie">Effets UI</span>
+              </td>
             </tr>
-            <tr data-cat="animation">
-              <th scope="row"><a href="https://text-effects.colorion.co">CSS Text Effects</a><span class="domaine">text-effects.colorion.co</span></th>
-              <td>Animation texte</td>
+            <tr data-outil-id="outil-020" data-cat="animation">
+              <th scope="row"><a class="nom" href="https://text-effects.colorion.co">CSS Text Effects</a><span class="domaine">text-effects.colorion.co</span></th>
+              <td>
+                <span class="categorie">Animation texte</span>
+              </td>
             </tr>
-            <tr data-cat="animation">
-              <th scope="row"><a href="https://circleloaders.dominikakissi.com">Circle Loaders</a><span class="domaine">circleloaders.dominikakissi.com</span></th>
-              <td>Animation</td>
+            <tr data-outil-id="outil-021" data-cat="animation">
+              <th scope="row"><a class="nom" href="https://circleloaders.dominikakissi.com">Circle Loaders</a><span class="domaine">circleloaders.dominikakissi.com</span></th>
+              <td>
+                <span class="categorie">Animation</span>
+              </td>
             </tr>
-            <tr data-cat="effets">
-              <th scope="row"><a href="https://gradientbuttons.colorion.co">Gradient Buttons</a><span class="domaine">gradientbuttons.colorion.co</span></th>
-              <td>Effets UI</td>
+            <tr data-outil-id="outil-022" data-cat="effets">
+              <th scope="row"><a class="nom" href="https://gradientbuttons.colorion.co">Gradient Buttons</a><span class="domaine">gradientbuttons.colorion.co</span></th>
+              <td>
+                <span class="categorie">Effets UI</span>
+              </td>
             </tr>
-            <tr data-cat="effets">
-              <th scope="row"><a href="https://shadertoy.com">Shadertoy</a><span class="domaine">shadertoy.com</span></th>
-              <td>Shaders</td>
+            <tr data-outil-id="outil-023" data-cat="effets">
+              <th scope="row"><a class="nom" href="https://shadertoy.com">Shadertoy</a><span class="domaine">shadertoy.com</span></th>
+              <td>
+                <span class="categorie">Shaders</span>
+              </td>
             </tr>
-            <tr data-cat="effets">
-              <th scope="row"><a href="https://3dicons.co">3Dicons</a><span class="domaine">3dicons.co</span></th>
-              <td>Icônes 3D</td>
+            <tr data-outil-id="outil-024" data-cat="effets">
+              <th scope="row"><a class="nom" href="https://3dicons.co">3Dicons</a><span class="domaine">3dicons.co</span></th>
+              <td>
+                <span class="categorie">Icônes 3D</span>
+              </td>
             </tr>
-            <tr data-cat="animation">
-              <th scope="row"><a href="https://animejs.com">Anime.js</a><span class="domaine">animejs.com</span></th>
-              <td>Bibliothèque d'animation JS</td>
+            <tr data-outil-id="outil-025" data-cat="animation">
+              <th scope="row"><a class="nom" href="https://animejs.com">Anime.js</a><span class="domaine">animejs.com</span></th>
+              <td>
+                <span class="categorie">Bibliothèque d&#x27;animation JS</span>
+              </td>
+            </tr>
+            <tr data-outil-id="outil-026" data-cat="outils-ia" data-champs="{&quot;description&quot;:&quot;Crée une application complète à partir d&#x27;une description, avec une base de données (Supabase).&quot;,&quot;acces&quot;:&quot;Prix à vérifier sur le site&quot;,&quot;dateVerification&quot;:&quot;2026-09-18&quot;,&quot;libre&quot;:null,&quot;tags&quot;:[]}">
+              <th scope="row"><a class="nom" href="https://lovable.dev/">Lovable</a><span class="domaine">lovable.dev</span></th>
+              <td>
+                <span class="categorie">Outils d&#x27;IA (créer une application)</span>
+                <p class="description">Crée une application complète à partir d&#x27;une description, avec une base de données (Supabase).</p>
+                <ul class="infos"><li>Accès : Prix à vérifier sur le site</li><li>Vérifié le 18 septembre 2026</li></ul>
+              </td>
+            </tr>
+            <tr data-outil-id="outil-027" data-cat="outils-ia" data-champs="{&quot;description&quot;:&quot;Crée une application à partir d&#x27;une description en langage naturel. Édité par StackBlitz.&quot;,&quot;acces&quot;:&quot;Prix à vérifier sur le site&quot;,&quot;dateVerification&quot;:&quot;2026-09-18&quot;,&quot;libre&quot;:null,&quot;tags&quot;:[]}">
+              <th scope="row"><a class="nom" href="https://bolt.new/">Bolt.new</a><span class="domaine">bolt.new</span></th>
+              <td>
+                <span class="categorie">Outils d&#x27;IA (créer une application)</span>
+                <p class="description">Crée une application à partir d&#x27;une description en langage naturel. Édité par StackBlitz.</p>
+                <ul class="infos"><li>Accès : Prix à vérifier sur le site</li><li>Vérifié le 18 septembre 2026</li></ul>
+              </td>
+            </tr>
+            <tr data-outil-id="outil-028" data-cat="outils-ia" data-champs="{&quot;description&quot;:&quot;Construit et améliore une application avec son assistant, Replit Agent.&quot;,&quot;acces&quot;:&quot;Prix à vérifier sur le site&quot;,&quot;dateVerification&quot;:&quot;2026-09-18&quot;,&quot;libre&quot;:null,&quot;tags&quot;:[]}">
+              <th scope="row"><a class="nom" href="https://replit.com/">Replit</a><span class="domaine">replit.com</span></th>
+              <td>
+                <span class="categorie">Outils d&#x27;IA (créer une application)</span>
+                <p class="description">Construit et améliore une application avec son assistant, Replit Agent.</p>
+                <ul class="infos"><li>Accès : Prix à vérifier sur le site</li><li>Vérifié le 18 septembre 2026</li></ul>
+              </td>
+            </tr>
+            <tr data-outil-id="outil-029" data-cat="outils-ia" data-champs="{&quot;description&quot;:&quot;Génère des écrans et des composants d&#x27;interface. Édité par Vercel.&quot;,&quot;acces&quot;:&quot;Prix à vérifier sur le site&quot;,&quot;dateVerification&quot;:&quot;2026-09-18&quot;,&quot;libre&quot;:null,&quot;tags&quot;:[]}">
+              <th scope="row"><a class="nom" href="https://v0.app/">v0</a><span class="domaine">v0.app</span></th>
+              <td>
+                <span class="categorie">Outils d&#x27;IA (créer une application)</span>
+                <p class="description">Génère des écrans et des composants d&#x27;interface. Édité par Vercel.</p>
+                <ul class="infos"><li>Accès : Prix à vérifier sur le site</li><li>Vérifié le 18 septembre 2026</li></ul>
+              </td>
+            </tr>
+            <tr data-outil-id="outil-030" data-cat="outils-ia" data-champs="{&quot;description&quot;:&quot;Assistant qui travaille dans un terminal (fenêtre de commandes) et sur un projet entier.&quot;,&quot;acces&quot;:&quot;Prix à vérifier sur le site&quot;,&quot;dateVerification&quot;:&quot;2026-09-18&quot;,&quot;libre&quot;:null,&quot;tags&quot;:[]}">
+              <th scope="row"><a class="nom" href="https://code.claude.com/docs/en/overview">Claude Code</a><span class="domaine">code.claude.com</span></th>
+              <td>
+                <span class="categorie">Outils d&#x27;IA (aide au code)</span>
+                <p class="description">Assistant qui travaille dans un terminal (fenêtre de commandes) et sur un projet entier.</p>
+                <ul class="infos"><li>Accès : Prix à vérifier sur le site</li><li>Vérifié le 18 septembre 2026</li></ul>
+              </td>
+            </tr>
+            <tr data-outil-id="outil-031" data-cat="outils-ia" data-champs="{&quot;description&quot;:&quot;Éditeur de code avec un assistant pour écrire, corriger et relire.&quot;,&quot;acces&quot;:&quot;Prix à vérifier sur le site&quot;,&quot;dateVerification&quot;:&quot;2026-09-18&quot;,&quot;libre&quot;:null,&quot;tags&quot;:[]}">
+              <th scope="row"><a class="nom" href="https://www.cursor.com/">Cursor</a><span class="domaine">cursor.com</span></th>
+              <td>
+                <span class="categorie">Outils d&#x27;IA (aide au code)</span>
+                <p class="description">Éditeur de code avec un assistant pour écrire, corriger et relire.</p>
+                <ul class="infos"><li>Accès : Prix à vérifier sur le site</li><li>Vérifié le 18 septembre 2026</li></ul>
+              </td>
+            </tr>
+            <tr data-outil-id="outil-032" data-cat="outils-ia" data-champs="{&quot;description&quot;:&quot;Aide à écrire du code dans GitHub et dans les éditeurs.&quot;,&quot;acces&quot;:&quot;Prix à vérifier sur le site&quot;,&quot;dateVerification&quot;:&quot;2026-09-18&quot;,&quot;libre&quot;:null,&quot;tags&quot;:[]}">
+              <th scope="row"><a class="nom" href="https://github.com/features/copilot">GitHub Copilot</a><span class="domaine">github.com</span></th>
+              <td>
+                <span class="categorie">Outils d&#x27;IA (aide au code)</span>
+                <p class="description">Aide à écrire du code dans GitHub et dans les éditeurs.</p>
+                <ul class="infos"><li>Accès : Prix à vérifier sur le site</li><li>Vérifié le 18 septembre 2026</li></ul>
+              </td>
+            </tr>
+            <tr data-outil-id="outil-033" data-cat="outils-ia" data-champs="{&quot;description&quot;:&quot;Assistant en terminal, ouvert (code public). Pas d&#x27;abonnement grand public d&#x27;après le dépôt.&quot;,&quot;acces&quot;:&quot;Gratuit à installer. Accès par clé d&#x27;API (une clé d&#x27;accès personnelle) ou offre entreprise.&quot;,&quot;dateVerification&quot;:&quot;2026-09-18&quot;,&quot;libre&quot;:true,&quot;tags&quot;:[]}">
+              <th scope="row"><a class="nom" href="https://github.com/google-gemini/gemini-cli">Gemini CLI</a><span class="domaine">github.com</span></th>
+              <td>
+                <span class="categorie">Outils d&#x27;IA (aide au code)</span>
+                <p class="description">Assistant en terminal, ouvert (code public). Pas d&#x27;abonnement grand public d&#x27;après le dépôt.</p>
+                <ul class="infos"><li>Accès : Gratuit à installer. Accès par clé d&#x27;API (une clé d&#x27;accès personnelle) ou offre entreprise.</li><li>Vérifié le 18 septembre 2026</li><li>Code ouvert : oui</li></ul>
+              </td>
+            </tr>
+            <tr data-outil-id="outil-034" data-cat="outils-ia" data-champs="{&quot;description&quot;:&quot;Assistant d&#x27;OpenAI qui s&#x27;exécute dans le terminal de l&#x27;ordinateur.&quot;,&quot;acces&quot;:&quot;Prix à vérifier sur le site&quot;,&quot;dateVerification&quot;:&quot;2026-09-18&quot;,&quot;libre&quot;:null,&quot;tags&quot;:[]}">
+              <th scope="row"><a class="nom" href="https://openai.com/codex/">OpenAI Codex CLI</a><span class="domaine">openai.com</span></th>
+              <td>
+                <span class="categorie">Outils d&#x27;IA (aide au code)</span>
+                <p class="description">Assistant d&#x27;OpenAI qui s&#x27;exécute dans le terminal de l&#x27;ordinateur.</p>
+                <ul class="infos"><li>Accès : Prix à vérifier sur le site</li><li>Vérifié le 18 septembre 2026</li></ul>
+              </td>
             </tr>
             </tbody>
           </table>
@@ -178,17 +304,31 @@
         <dd>Un format de texte très simple, lisible par une personne comme par une IA.</dd>
         <dt>Shader</dt>
         <dd>Un petit programme qui dessine des effets graphiques à l'écran.</dd>
+        <dt>Fiche</dt>
+        <dd>Les informations d'une ressource (nom, adresse, catégorie…). Les personnes autorisées peuvent la modifier et ajouter des commentaires.</dd>
       </dl>
     </section>
 
     <section class="disclaimer" aria-labelledby="sources">
       <h2 id="sources">Sources et fiabilité</h2>
+
       <h3>Post sur X : fiabilité faible</h3>
-      <p>La liste vient d'une capture d'écran d'un post sur X, publié par un compte au prénom Himanshu. Les catégories sont celles du site, pas celles du post.</p>
+      <p>Source des 25 premières ressources (de Scrolltide à Anime.js) : une capture d'écran d'un post sur X, publié par un compte au prénom Himanshu. Les catégories sont celles du site, pas celles du post.</p>
       <ul>
         <li><strong>Contre :</strong> aucune date, aucun prix et aucune preuve ne sont donnés pour les ressources. Le post peut faire la promotion de produits de son auteur : le site de la première ressource renvoie vers des comptes au même prénom que lui, ce qui reste à vérifier.</li>
         <li><strong>Non vérifié :</strong> la capture est en basse résolution. Le nom de famille, l'identifiant, l'année et les compteurs sont illisibles. Je n'ai ouvert qu'une seule adresse (Scrolltide), uniquement pour vérifier qu'elle existe. Je n'ai pas ouvert les autres sites.</li>
       </ul>
+
+      <h3>Dépôt GitHub awesome-vibecoding : fiabilité moyenne à bonne</h3>
+      <p>Source des 9 outils d'IA (Lovable à OpenAI Codex CLI) : <a href="https://github.com/Scap-Mehdi/awesome-vibecoding/blob/main/README.fr.md">Scap-Mehdi/awesome-vibecoding</a>, fichier <code>README.fr.md</code>, relu le 12 octobre 2026. Ces 9 outils portent tous la date de vérification du 18 septembre 2026.</p>
+      <ul>
+        <li><strong>Pour :</strong> une date par entrée, un accès et une licence indiqués, des fiches de preuves pour la plupart des entrées.</li>
+        <li><strong>Contre :</strong> le dépôt est mis à jour par un agent automatique. La mention « vérifié » est en partie automatisée. Les prix sont souvent non examinés (« à vérifier »).</li>
+        <li><strong>Non vérifié par moi :</strong> je n'ai ouvert ni les fiches de preuves ni les sites des outils.</li>
+      </ul>
+
+      <h3>Fiches modifiables</h3>
+      <p>Les personnes autorisées peuvent modifier les fiches et ajouter des commentaires. Ces modifications ne sont pas vérifiées par l'équipe du site : un texte modifié peut être faux. La date de vérification n'est valable que pour la dernière personne qui l'a renseignée.</p>
 
       <h3>Ce que cette page ne dit pas</h3>
       <p>Aucun classement : je n'ai pas comparé la qualité des ressources. Les prix changent souvent : vérifiez-les sur le site de chaque ressource avant de vous inscrire.</p>
