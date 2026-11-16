@@ -26,5 +26,20 @@
   "vars": {
     "ACCESS_TEAM_DOMAIN": "",
     "ACCESS_AUD": ""
+  },
+
+  // Prévisualisations (builds des branches, commande « wrangler preview ») : Cloudflare exige ce bloc
+  // pour ne pas brancher une prévisualisation sur la production par mégarde.
+  // Ici : les deux variables Access sont VIDES, donc une prévisualisation ne peut JAMAIS modifier
+  // les données (écriture refusée). Elle peut seulement LIRE le bucket de production, qui est public
+  // en lecture de toute façon. Pour un bucket de test séparé, créez-le et changez bucket_name.
+  "previews": {
+    "vars": {
+      "ACCESS_TEAM_DOMAIN": "",
+      "ACCESS_AUD": ""
+    },
+    "r2_buckets": [
+      { "binding": "DATA", "bucket_name": "codex-prime-data" }
+    ]
   }
 }
